@@ -48,7 +48,7 @@ export function fromOff(p) {
   if (p.nutrition_data_per === 'serving' && !num(p.serving_quantity)) notes.push('Entered per serving without a serving size, so the per-100 g values may be wrong.');
   return {
     code: p.code, name: p.product_name_sv || p.product_name || '', brand: p.brands || '', quantity: p.quantity || '',
-    per100, kj, salt_raw: salt, sodium_raw: sodium, grams, source: 'openfoodfacts', notes,
+    per100, kj, added_sugars: num(n['added-sugars_100g']), salt_raw: salt, sodium_raw: sodium, grams, source: 'openfoodfacts', notes,
   };
 }
 
@@ -74,6 +74,7 @@ export function checkProduct(prod, maxes = {}) {
   if (v.protein_g !== undefined && v.fat_g !== undefined && v.carbs_g !== undefined && v.protein_g + v.fat_g + v.carbs_g > 101) add(null, 'Protein, fat and carbohydrate add up to more than 100 g.');
   if (v.saturated_fat_g > (v.fat_g ?? Infinity) + 0.1) add('saturated_fat_g', 'Saturated fat is more than total fat.');
   if (v.sugars_g > (v.carbs_g ?? Infinity) + 0.1) add('sugars_g', 'Sugars are more than total carbohydrate.');
+  if (prod.added_sugars != null && v.sugars_g !== undefined && v.sugars_g + 0.05 < prod.added_sugars) add('sugars_g', `Total sugars (${v.sugars_g} g) are less than the added sugars (${prod.added_sugars} g) on the same entry, so one of the two is wrong.`);
   if (v.energy_kcal !== undefined && v.protein_g !== undefined && v.fat_g !== undefined && v.carbs_g !== undefined) {
     const est = 4 * v.protein_g + 4 * v.carbs_g + 9 * v.fat_g + 2 * (v.fibre_g || 0);
     if (Math.abs(v.energy_kcal - est) > Math.max(30, 0.25 * est)) add('energy_kcal', `Energy ${Math.round(v.energy_kcal)} kcal does not fit the macros (about ${Math.round(est)} kcal). Alcohol or polyols can explain this, a typing error is more likely.`);

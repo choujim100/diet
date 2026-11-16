@@ -425,7 +425,7 @@ function productModal(prod, { note = null, bad = false } = {}) {
       addBtn.title = blocked ? (cur.per100.energy_kcal === undefined ? 'Energy is needed.' : 'Tick the box once you have checked the numbers.') : '';
     };
     const rows = keys.map(([k, label, unit]) => {
-      inputs[k] = h('input', { type: 'number', step: 'any', min: '0', value: cur.per100[k] ?? '', 'aria-label': `${label} per 100 g`, onchange: (e) => {
+      inputs[k] = h('input', { type: 'number', step: 'any', min: '0', value: cur.per100[k] ?? '', 'aria-label': `${label} per 100 g`, placeholder: 'not listed', onchange: (e) => {
         edited = true; cur.kj = null; cur.salt_raw = null; cur.sodium_raw = null; cur.notes = [];
         if (e.target.value === '') delete cur.per100[k]; else cur.per100[k] = Math.max(0, parseFloat(e.target.value));
         refresh();

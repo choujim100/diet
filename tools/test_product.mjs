@@ -36,6 +36,13 @@ assert.ok(e({ energy_kcal: 100, protein_g: 5, fat_g: 2, carbs_g: 15, sugars_g: 2
 assert.ok(e({ protein_g: 5, fat_g: 2 }).includes('energy_kcal'), 'missing energy');
 assert.deepEqual(e({ energy_kcal: 100, protein_g: 5, fat_g: 2, carbs_g: 15 }), []);
 
+// the real entry for 20839383 (Snack Day onion snack): total sugars 1 g but added sugars 3.2 g
+const snack = fromOff({ code: '20839383', nutriments: { 'energy-kcal_100g': 533, 'energy-kj_100g': 2225, fat_100g: 32.1, 'saturated-fat_100g': 14.1, carbohydrates_100g: 55.6,
+  sugars_100g: 1, 'added-sugars_100g': 3.2, proteins_100g: 5.5, salt_100g: 2.29, sodium_100g: 0.916 } });
+assert.deepEqual(checkProduct(snack, {}).map((i) => i.key), ['sugars_g']);
+snack.per100.sugars_g = 3.2;
+assert.deepEqual(checkProduct(snack, {}), []);
+
 // grams -> nutrients, missing ones counted
 const r = productNutrients({ per100: { energy_kcal: 200, protein_g: 10 } }, 50, ['energy_kcal', 'protein_g', 'iron_mg']);
 assert.equal(r.n.energy_kcal, 100); assert.equal(r.n.protein_g, 5); assert.deepEqual(r.missing, ['iron_mg']);
