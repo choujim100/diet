@@ -1,0 +1,178 @@
+name,expected,split
+Svensk kycklingbröstfilé 900 g,chicken_breast,dev
+Kycklingfilé fryst 1 kg,chicken_breast,dev
+Kycklinglårfilé 700 g,chicken_thigh,dev
+Nötfärs 10% 500 g,beef_mince_10,dev
+Fläskfilé 600 g,pork_tenderloin,dev
+Fläskfärs 8% 500 g,pork_mince_8,dev
+Bacon skivat 140 g,bacon,dev
+Laxfilé fryst 4-pack,salmon,dev
+Torskfilé 400 g,cod,dev
+Räkor kokta skalade 200 g,shrimp,dev
+Tonfisk i vatten 3-pack,tuna_in_water,dev
+Ägg 12-pack frigående,egg,dev
+Mellanmjölk 1 L,milk_1_5,dev
+Standardmjölk 3% 1 L,milk_3,dev
+Lättmjölk 0.5% 1 L,milk_skimmed,dev
+Havredryck 1 L,oat_drink,dev
+Naturell yoghurt 3% 1 kg,yoghurt_plain_3,dev
+Kvarg naturell 0.2% 500 g,quark_plain,dev
+Cottage cheese 4% 500 g,cottage_cheese,dev
+Gräddfil 12% 3 dl,sour_cream_12,dev
+Smör 82% 500 g,butter,dev
+Mozzarella 125 g,mozzarella,dev
+Hårdost 17% 700 g,cheese_hard_17,dev
+Halloumi 250 g,halloumi,dev
+Fetaost 200 g,feta_proxy,dev
+Havregryn 1 kg,oats_rolled,dev
+Spaghetti 500 g,pasta_dried,dev
+Fullkornspasta penne 500 g,pasta_wholegrain,dev
+Basmatiris 1 kg,rice_basmati,dev
+Bulgur 500 g,bulgur,dev
+Couscous 500 g,couscous,dev
+Röda linser 500 g,lentils_dried,dev
+Kikärtor på burk 400 g,chickpeas_canned,dev
+Svarta bönor på burk,black_beans_canned,dev
+Kidneybönor 400 g,kidney_beans_canned,dev
+Broccoli 500 g,broccoli,dev
+Blomkål 1 st,cauliflower,dev
+Morötter 1 kg,carrot,dev
+Gul lök 1 kg,onion_yellow,dev
+Vitlök 3-pack,garlic,dev
+Körsbärstomater 250 g,tomato,dev
+Gurka 1 st,cucumber,dev
+Paprika röd 3-pack,bell_pepper_red,dev
+Zucchini 1 st,zucchini,dev
+Spenat fryst 450 g,spinach_frozen,dev
+Champinjoner 250 g,mushroom_button,dev
+Potatis 2 kg,potato,dev
+Sötpotatis 1 kg,sweet_potato,dev
+Avokado 2-pack,avocado,dev
+Bananer 1 kg,banana,dev
+Äpplen Royal Gala 1 kg,apple,dev
+Blåbär frysta 500 g,blueberries_frozen,dev
+Citron 1 st,lemon,dev
+Mandlar 200 g,almonds,dev
+Valnötter 200 g,walnuts,dev
+Jordnötssmör crunchy 350 g,peanut_butter,dev
+Rapsolja 1 L,rapeseed_oil,dev
+Olivolja extra virgin 500 ml,olive_oil,dev
+Honung 350 g,honey,dev
+Hummus classic 200 g,hummus,dev
+Tofu naturell 200 g,tofu,dev
+Chiafrön 200 g,chia_seeds,dev
+Kokosmjölk 400 ml,coconut_milk,dev
+Tomatpuré 140 g,tomato_puree,dev
+Krossade tomater 400 g,tomato_pulp_canned,dev
+Sojasås 150 ml,soy_sauce,dev
+Kycklingbröstfilé fryst,chicken_breast,test
+Kalkonfilé 500 g,turkey_fillet,test
+Nötfärs 15% 800 g,beef_mince_15,test
+Lax portionsbitar 400 g,salmon,test
+Sardiner i olja 120 g,sardines_in_oil,test
+Ekologiska ägg 6-pack,egg,test
+Mjölk 3% ekologisk 1 L,milk_3,test
+Lättfil 0.5% 1 L,lattfil,test
+Yoghurt naturell lätt 0.5% 1 kg,yoghurt_plain_skimmed,test
+Mini fraiche 5% 2 dl,creme_fraiche_5,test
+Färskost cream cheese lätt 200 g,cream_cheese_15,test
+Ricotta 250 g,ricotta,test
+Parmesan riven 80 g,parmesan,test
+Basmati ris 1 kg,rice_basmati,test
+Quinoa 500 g,quinoa,test
+Äggnudlar 250 g,egg_noodles,test
+Risnudlar 250 g,rice_noodles,test
+Gröna linser på burk 400 g,green_lentils_canned,test
+Vita bönor 400 g,white_beans_canned,test
+Kikärtor torkade 500 g,chickpeas_dried,test
+Gröna ärtor frysta 450 g,green_peas_frozen,test
+Majskorn fryst 500 g,corn_kernels_frozen,test
+Rödkål 1 kg,cabbage_red,test
+Vitkål 1 kg,cabbage_white,test
+Grönkål 250 g,kale,test
+Purjolök 2-pack,leek,test
+Rödbetor 500 g,beetroot,test
+Isbergssallad 1 st,lettuce_iceberg,test
+Aubergine 1 st,aubergine,test
+Babyspenat färsk 200 g,spinach_raw,test
+Färsk dill 1 knippe,dill,test
+Persilja 1 knippe,parsley,test
+Ingefära 100 g,ginger,test
+Chilipeppar röd,chili_pepper,test
+Färsk basilika 1 kruka,basil,test
+Butternutpumpa 1 st,pumpkin,test
+Kålrot 1 kg,swede,test
+Palsternacka 500 g,parsnip,test
+Stjälkselleri 1 st,celery,test
+Jordgubbar 400 g,strawberries,test
+Hallon 125 g,raspberries,test
+Päron 1 kg,pear,test
+Vindruvor kärnfria 500 g,grapes,test
+Apelsiner 1.5 kg,orange,test
+Kiwi 4-pack,kiwi,test
+Ananas 1 st,pineapple,test
+Dadlar 250 g,dates,test
+Russin 500 g,raisins,test
+Cashewnötter 200 g,cashews,test
+Solrosfrön 500 g,sunflower_seeds,test
+Pumpafrön 200 g,pumpkin_seeds,test
+Linfrön 500 g,flaxseed,test
+Sesamfrön 200 g,sesame_seeds,test
+Tahini 250 g,tahini,test
+Sojadryck 1 L,soy_drink,test
+Pesto grön 190 g,pesto,test
+Svarta oliver 200 g,olives_black,test
+Majonnäs 400 g,mayonnaise_30,test
+Tempeh 200 g,tempeh,test
+Rågbröd fullkorn 500 g,bread_rye_wholegrain,test
+Tortilla vete 8-pack,tortilla_wheat,test
+Müsli fullkorn 750 g,muesli,test
+Toalettpapper 8-pack,none,test
+Diskmedel citron 500 ml,none,test
+Batterier AA 4-pack,none,test
+Hundmat nöt 400 g,none,test
+Schampo 250 ml,none,test
+Kycklingbröstfilé strimlad 600 g,chicken_breast,test2
+Lax hel fryst 1 kg,salmon,test2
+Ägg Lidl L 10-pack,egg,test2
+Standardmjölk Milbona 1.5 L,milk_3,test2
+Mellanmjölk Milbona 1.5 L,milk_1_5,test2
+Naturell kvarg 0.2% 500 g,quark_plain,test2
+Fullkornspasta spiraler 500 g,pasta_wholegrain,test2
+Ris basmati 1 kg,rice_basmati,test2
+Tomater på kvist 500 g,tomato,test2
+Gul lök nät 1 kg,onion_yellow,test2
+Potatis fast 1 kg,potato,test2
+Bananer ekologiska 1 kg,banana,test2
+Äpple Granny Smith 1 kg,apple,test2
+Citroner 3-pack,lemon,test2
+Mandlar hela 200 g,almonds,test2
+Olivolja Extra Virgin 750 ml,olive_oil,test2
+Babyspenat 200 g,spinach_raw,test2
+Hackad spenat fryst 600 g,spinach_frozen,test2
+Svarta bönor 400 g,black_beans_canned,test2
+Hummus kikärtor 200 g,hummus,test2
+Jordnötter rostade 250 g,peanuts,test2
+Solrosfrön 500 g,sunflower_seeds,test2
+Nötfärs 10% Lidl 500 g,beef_mince_10,test2
+Fläskfärs 8% 1 kg,pork_mince_8,test2
+Torskfilé fryst 4-pack,cod,test2
+Makrill fryst 400 g,mackerel,test2
+Sill 500 g,herring,test2
+Gräddfil naturell 12% 3 dl,sour_cream_12,test2
+Hårdost 26% 1 kg,cheese_hard_26,test2
+Cream cheese lätt 15% 200 g,cream_cheese_15,test2
+Rödkål 1 kg,cabbage_red,test2
+Sparris grön 250 g,asparagus_green,test2
+Rödbetor kokta 500 g,beetroot,test2
+Ingefära färsk 100 g,ginger,test2
+Röd paprika 3-pack,bell_pepper_red,test2
+Tvättmedel 20 tvättar,none,test2
+Hushållspapper 4-pack,none,test2
+Blöjor stl 4,none,test2
+Tandkräm mint 75 ml,none,test2
+Kattmat lax 400 g,none,test2
+Duschtvål citrus 250 ml,none,test2
+Rengöringsspray citron 500 ml,none,test2
+Glödlampa LED E27,none,test2
+Disktabletter 40-pack,none,test2

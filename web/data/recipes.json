@@ -1,0 +1,1711 @@
+{
+ "note": "Original recipes written for this app. One portion per recipe. Ingredient amounts are RAW or DRY weights in grams (ids refer to data/curated_ingredients.csv), so nutrition can be computed straight from the Swedish food database without cooking-yield factors. Total time (prep + cooking) is 30 minutes or less.",
+ "recipes": [
+  {
+   "id": "porridge_blueberry",
+   "name": "Oat porridge with blueberries",
+   "name_sv": "Havregrynsgröt med blåbär",
+   "meal": [
+    "breakfast"
+   ],
+   "minutes": 10,
+   "ingredients": [
+    {
+     "id": "oats_rolled",
+     "g": 50
+    },
+    {
+     "id": "milk_1_5",
+     "g": 200
+    },
+    {
+     "id": "blueberries_frozen",
+     "g": 80
+    },
+    {
+     "id": "walnuts",
+     "g": 10
+    }
+   ],
+   "steps": [
+    "Simmer the oats in the milk for 5 minutes, stirring.",
+    "Warm the blueberries in the microwave or stir them in frozen.",
+    "Top with chopped walnuts."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "yoghurt_muesli_banana",
+   "name": "Yoghurt with muesli and banana",
+   "name_sv": "Yoghurt med müsli och banan",
+   "meal": [
+    "breakfast"
+   ],
+   "minutes": 5,
+   "ingredients": [
+    {
+     "id": "yoghurt_plain_3",
+     "g": 200
+    },
+    {
+     "id": "muesli",
+     "g": 40
+    },
+    {
+     "id": "banana",
+     "g": 100
+    }
+   ],
+   "steps": [
+    "Spoon yoghurt into a bowl.",
+    "Slice the banana on top and sprinkle with muesli."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "scrambled_egg_rye",
+   "name": "Scrambled eggs on rye bread",
+   "name_sv": "Äggröra på rågbröd",
+   "meal": [
+    "breakfast"
+   ],
+   "minutes": 10,
+   "ingredients": [
+    {
+     "id": "egg",
+     "g": 120
+    },
+    {
+     "id": "butter",
+     "g": 5
+    },
+    {
+     "id": "bread_rye_wholegrain",
+     "g": 60
+    },
+    {
+     "id": "tomato",
+     "g": 80
+    }
+   ],
+   "steps": [
+    "Whisk the eggs with a pinch of salt.",
+    "Melt the butter and stir the eggs over medium heat until just set.",
+    "Serve on rye bread with sliced tomato."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "quark_berries_nuts",
+   "name": "Quark with raspberries and nuts",
+   "name_sv": "Kvarg med hallon och nötter",
+   "meal": [
+    "breakfast"
+   ],
+   "minutes": 5,
+   "ingredients": [
+    {
+     "id": "quark_plain",
+     "g": 200
+    },
+    {
+     "id": "raspberries",
+     "g": 100
+    },
+    {
+     "id": "walnuts",
+     "g": 15
+    },
+    {
+     "id": "honey",
+     "g": 8
+    }
+   ],
+   "steps": [
+    "Put the quark in a bowl.",
+    "Top with raspberries, chopped walnuts and a drizzle of honey."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "cottage_cheese_sandwich",
+   "name": "Rye sandwich with cottage cheese",
+   "name_sv": "Smörgås med keso och gurka",
+   "meal": [
+    "breakfast"
+   ],
+   "minutes": 5,
+   "ingredients": [
+    {
+     "id": "bread_rye_wholegrain",
+     "g": 80
+    },
+    {
+     "id": "cottage_cheese",
+     "g": 100
+    },
+    {
+     "id": "cucumber",
+     "g": 60
+    },
+    {
+     "id": "tomato",
+     "g": 60
+    }
+   ],
+   "steps": [
+    "Spread cottage cheese on the bread.",
+    "Top with sliced cucumber and tomato."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "hummus_veg_rye",
+   "name": "Hummus and vegetable rye sandwich",
+   "name_sv": "Smörgås med hummus och grönsaker",
+   "meal": [
+    "breakfast"
+   ],
+   "minutes": 5,
+   "ingredients": [
+    {
+     "id": "bread_rye_wholegrain",
+     "g": 90
+    },
+    {
+     "id": "hummus",
+     "g": 60
+    },
+    {
+     "id": "cucumber",
+     "g": 60
+    },
+    {
+     "id": "tomato",
+     "g": 60
+    },
+    {
+     "id": "sunflower_seeds",
+     "g": 10
+    }
+   ],
+   "steps": [
+    "Spread hummus on the bread.",
+    "Top with cucumber, tomato and sunflower seeds."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": true,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "tofu_scramble_rye",
+   "name": "Tofu scramble on rye bread",
+   "name_sv": "Tofuröra på rågbröd",
+   "meal": [
+    "breakfast"
+   ],
+   "minutes": 10,
+   "ingredients": [
+    {
+     "id": "tofu",
+     "g": 150
+    },
+    {
+     "id": "bread_rye_wholegrain",
+     "g": 70
+    },
+    {
+     "id": "tomato",
+     "g": 80
+    },
+    {
+     "id": "olive_oil",
+     "g": 6
+    }
+   ],
+   "steps": [
+    "Crumble the tofu and fry in the oil with turmeric, salt and pepper for 6 minutes.",
+    "Serve on the bread with sliced tomato."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": true,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "pb_banana_rye",
+   "name": "Peanut butter and banana rye sandwich",
+   "name_sv": "Smörgås med jordnötssmör och banan",
+   "meal": [
+    "breakfast"
+   ],
+   "minutes": 5,
+   "ingredients": [
+    {
+     "id": "bread_rye_wholegrain",
+     "g": 90
+    },
+    {
+     "id": "peanut_butter",
+     "g": 25
+    },
+    {
+     "id": "banana",
+     "g": 100
+    }
+   ],
+   "steps": [
+    "Spread peanut butter on the bread.",
+    "Top with sliced banana."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": true,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "overnight_oats_soy",
+   "name": "Overnight oats with soy drink and banana",
+   "name_sv": "Overnight oats med sojadryck och banan",
+   "meal": [
+    "breakfast"
+   ],
+   "minutes": 5,
+   "ingredients": [
+    {
+     "id": "oats_rolled",
+     "g": 60
+    },
+    {
+     "id": "soy_drink",
+     "g": 200
+    },
+    {
+     "id": "banana",
+     "g": 100
+    },
+    {
+     "id": "chia_seeds",
+     "g": 10
+    },
+    {
+     "id": "peanut_butter",
+     "g": 10
+    }
+   ],
+   "steps": [
+    "Stir oats, chia seeds and soy drink together the night before and chill.",
+    "In the morning top with sliced banana and a spoon of peanut butter."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": true,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "baked_salmon_potato_broccoli",
+   "name": "Baked salmon with potatoes and broccoli",
+   "name_sv": "Ugnsbakad lax med potatis och broccoli",
+   "meal": [
+    "main"
+   ],
+   "minutes": 30,
+   "ingredients": [
+    {
+     "id": "salmon",
+     "g": 150
+    },
+    {
+     "id": "potato",
+     "g": 250
+    },
+    {
+     "id": "broccoli",
+     "g": 150
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 5
+    },
+    {
+     "id": "lemon",
+     "g": 20
+    }
+   ],
+   "steps": [
+    "Heat the oven to 225 C. Cut the potatoes small and boil them for 15 minutes.",
+    "Place the salmon on a tray with oil, salt and lemon, and bake 12-15 minutes.",
+    "Steam the broccoli for the last 5 minutes. Serve together."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "chicken_stir_fry_rice",
+   "name": "Chicken stir-fry with rice",
+   "name_sv": "Kycklingwok med ris",
+   "meal": [
+    "main"
+   ],
+   "minutes": 25,
+   "ingredients": [
+    {
+     "id": "chicken_breast",
+     "g": 150
+    },
+    {
+     "id": "bell_pepper_red",
+     "g": 100
+    },
+    {
+     "id": "carrot",
+     "g": 80
+    },
+    {
+     "id": "broccoli",
+     "g": 100
+    },
+    {
+     "id": "rice_basmati",
+     "g": 70
+    },
+    {
+     "id": "soy_sauce",
+     "g": 15
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 8
+    },
+    {
+     "id": "garlic",
+     "g": 5
+    },
+    {
+     "id": "ginger",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Start the rice. Slice the chicken and vegetables.",
+    "Fry the chicken in oil until golden, 5 minutes. Add garlic, ginger and vegetables for 6-8 minutes.",
+    "Add soy sauce and serve over the rice."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": false
+   }
+  },
+  {
+   "id": "lentil_stew",
+   "name": "Lentil and vegetable stew",
+   "name_sv": "Linsgryta med grönsaker",
+   "meal": [
+    "main"
+   ],
+   "minutes": 30,
+   "ingredients": [
+    {
+     "id": "lentils_dried",
+     "g": 80
+    },
+    {
+     "id": "onion_yellow",
+     "g": 80
+    },
+    {
+     "id": "carrot",
+     "g": 100
+    },
+    {
+     "id": "tomato_pulp_canned",
+     "g": 150
+    },
+    {
+     "id": "garlic",
+     "g": 5
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 8
+    },
+    {
+     "id": "spinach_frozen",
+     "g": 80
+    }
+   ],
+   "steps": [
+    "Fry onion, carrot and garlic in oil for 5 minutes.",
+    "Add lentils, tomato and 250 ml water. Simmer 18-20 minutes until tender.",
+    "Stir in the spinach for the last 3 minutes. Season."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": true,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "tuna_tomato_pasta",
+   "name": "Wholegrain pasta with tuna and tomato",
+   "name_sv": "Fullkornspasta med tonfisk och tomat",
+   "meal": [
+    "main"
+   ],
+   "minutes": 20,
+   "ingredients": [
+    {
+     "id": "pasta_wholegrain",
+     "g": 90
+    },
+    {
+     "id": "tuna_in_water",
+     "g": 80
+    },
+    {
+     "id": "tomato_pulp_canned",
+     "g": 200
+    },
+    {
+     "id": "onion_yellow",
+     "g": 50
+    },
+    {
+     "id": "garlic",
+     "g": 5
+    },
+    {
+     "id": "olive_oil",
+     "g": 8
+    }
+   ],
+   "steps": [
+    "Cook the pasta.",
+    "Fry onion and garlic in the oil, add the tomato and simmer 8 minutes.",
+    "Fold in the drained tuna and the pasta."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "bolognese",
+   "name": "Pasta with beef and tomato sauce",
+   "name_sv": "Pasta med köttfärssås",
+   "meal": [
+    "main"
+   ],
+   "minutes": 30,
+   "ingredients": [
+    {
+     "id": "beef_mince_10",
+     "g": 120
+    },
+    {
+     "id": "pasta_dried",
+     "g": 90
+    },
+    {
+     "id": "tomato_pulp_canned",
+     "g": 200
+    },
+    {
+     "id": "carrot",
+     "g": 60
+    },
+    {
+     "id": "onion_yellow",
+     "g": 60
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Grate the carrot and chop the onion. Fry both in oil for 3 minutes.",
+    "Brown the mince, add the tomato and simmer 15 minutes.",
+    "Cook the pasta and serve with the sauce."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": false
+   }
+  },
+  {
+   "id": "chickpea_curry_spinach",
+   "name": "Chickpea curry with spinach",
+   "name_sv": "Kikärtscurry med spenat",
+   "meal": [
+    "main"
+   ],
+   "minutes": 25,
+   "ingredients": [
+    {
+     "id": "chickpeas_canned",
+     "g": 200
+    },
+    {
+     "id": "coconut_milk",
+     "g": 100
+    },
+    {
+     "id": "spinach_frozen",
+     "g": 100
+    },
+    {
+     "id": "onion_yellow",
+     "g": 70
+    },
+    {
+     "id": "garlic",
+     "g": 5
+    },
+    {
+     "id": "tomato_pulp_canned",
+     "g": 100
+    },
+    {
+     "id": "rice_basmati",
+     "g": 70
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Start the rice.",
+    "Fry onion and garlic with curry powder, add tomato, coconut milk and chickpeas.",
+    "Simmer 10 minutes, add spinach for the last 4 minutes."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": true,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "tofu_veg_noodles",
+   "name": "Tofu and vegetable noodles",
+   "name_sv": "Tofuwok med risnudlar",
+   "meal": [
+    "main"
+   ],
+   "minutes": 20,
+   "ingredients": [
+    {
+     "id": "tofu",
+     "g": 150
+    },
+    {
+     "id": "broccoli",
+     "g": 120
+    },
+    {
+     "id": "bell_pepper_red",
+     "g": 100
+    },
+    {
+     "id": "carrot",
+     "g": 60
+    },
+    {
+     "id": "soy_sauce",
+     "g": 15
+    },
+    {
+     "id": "rice_noodles",
+     "g": 60
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 8
+    }
+   ],
+   "steps": [
+    "Soak or boil the noodles as the pack says.",
+    "Fry cubed tofu in oil until golden, remove. Stir-fry the vegetables 6 minutes.",
+    "Return the tofu, add noodles and soy sauce."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": true,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "mushroom_omelette_salad",
+   "name": "Mushroom and cheese omelette with salad",
+   "name_sv": "Svampomelett med sallad",
+   "meal": [
+    "main"
+   ],
+   "minutes": 15,
+   "ingredients": [
+    {
+     "id": "egg",
+     "g": 180
+    },
+    {
+     "id": "mushroom_button",
+     "g": 100
+    },
+    {
+     "id": "cheese_hard_17",
+     "g": 30
+    },
+    {
+     "id": "butter",
+     "g": 5
+    },
+    {
+     "id": "lettuce_iceberg",
+     "g": 50
+    },
+    {
+     "id": "tomato",
+     "g": 80
+    },
+    {
+     "id": "bread_rye_wholegrain",
+     "g": 50
+    }
+   ],
+   "steps": [
+    "Fry sliced mushrooms in the butter until golden.",
+    "Pour in the whisked eggs, sprinkle with cheese and fold when set.",
+    "Serve with salad and bread."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "cod_potato_peas",
+   "name": "Baked cod with potatoes and peas",
+   "name_sv": "Ugnsbakad torsk med potatis och ärtor",
+   "meal": [
+    "main"
+   ],
+   "minutes": 30,
+   "ingredients": [
+    {
+     "id": "cod",
+     "g": 160
+    },
+    {
+     "id": "potato",
+     "g": 250
+    },
+    {
+     "id": "green_peas_frozen",
+     "g": 100
+    },
+    {
+     "id": "butter",
+     "g": 10
+    },
+    {
+     "id": "lemon",
+     "g": 20
+    },
+    {
+     "id": "dill",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Boil the potatoes 18 minutes.",
+    "Bake the cod at 200 C with butter and lemon for 12 minutes.",
+    "Add the peas to the potatoes for the last 3 minutes. Top with dill."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "chicken_sweet_potato_stew",
+   "name": "Chicken, sweet potato and chickpea stew",
+   "name_sv": "Kycklinggryta med sötpotatis och kikärtor",
+   "meal": [
+    "main"
+   ],
+   "minutes": 30,
+   "ingredients": [
+    {
+     "id": "chicken_thigh",
+     "g": 150
+    },
+    {
+     "id": "sweet_potato",
+     "g": 200
+    },
+    {
+     "id": "chickpeas_canned",
+     "g": 100
+    },
+    {
+     "id": "tomato_pulp_canned",
+     "g": 150
+    },
+    {
+     "id": "onion_yellow",
+     "g": 60
+    },
+    {
+     "id": "olive_oil",
+     "g": 8
+    }
+   ],
+   "steps": [
+    "Brown the diced chicken and onion in the oil.",
+    "Add diced sweet potato, tomato, chickpeas and 100 ml water.",
+    "Simmer covered for 18-20 minutes until the sweet potato is soft."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": false
+   }
+  },
+  {
+   "id": "shrimp_zucchini_pasta",
+   "name": "Shrimp and zucchini pasta",
+   "name_sv": "Räkpasta med zucchini",
+   "meal": [
+    "main"
+   ],
+   "minutes": 20,
+   "ingredients": [
+    {
+     "id": "shrimp",
+     "g": 120
+    },
+    {
+     "id": "pasta_dried",
+     "g": 90
+    },
+    {
+     "id": "zucchini",
+     "g": 100
+    },
+    {
+     "id": "garlic",
+     "g": 5
+    },
+    {
+     "id": "olive_oil",
+     "g": 10
+    },
+    {
+     "id": "lemon",
+     "g": 15
+    },
+    {
+     "id": "parsley",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Cook the pasta.",
+    "Fry sliced zucchini and garlic in oil 5 minutes, add the shrimp for 2 minutes.",
+    "Toss with pasta, lemon juice and parsley."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "mackerel_potato_beetroot",
+   "name": "Mackerel with potatoes and beetroot",
+   "name_sv": "Makrill med potatis och rödbeta",
+   "meal": [
+    "main"
+   ],
+   "minutes": 30,
+   "ingredients": [
+    {
+     "id": "mackerel",
+     "g": 150
+    },
+    {
+     "id": "potato",
+     "g": 250
+    },
+    {
+     "id": "beetroot",
+     "g": 100
+    },
+    {
+     "id": "creme_fraiche_5",
+     "g": 30
+    },
+    {
+     "id": "dill",
+     "g": 3
+    }
+   ],
+   "steps": [
+    "Boil the potatoes and diced beetroot together 18 minutes.",
+    "Fry the mackerel fillets 3 minutes per side.",
+    "Serve with creme fraiche and dill."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "quinoa_chickpea_feta_salad",
+   "name": "Quinoa salad with chickpeas and feta",
+   "name_sv": "Quinoasallad med kikärtor och fetaost",
+   "meal": [
+    "main"
+   ],
+   "minutes": 20,
+   "ingredients": [
+    {
+     "id": "quinoa",
+     "g": 70
+    },
+    {
+     "id": "chickpeas_canned",
+     "g": 120
+    },
+    {
+     "id": "cucumber",
+     "g": 80
+    },
+    {
+     "id": "tomato",
+     "g": 100
+    },
+    {
+     "id": "feta_proxy",
+     "g": 40
+    },
+    {
+     "id": "olive_oil",
+     "g": 10
+    },
+    {
+     "id": "lemon",
+     "g": 15
+    }
+   ],
+   "steps": [
+    "Rinse and boil the quinoa 12 minutes, then cool a little.",
+    "Dice cucumber and tomato.",
+    "Mix everything with oil, lemon, salt and crumbled feta."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "beef_bean_chili",
+   "name": "Beef and bean chili with rice",
+   "name_sv": "Chili con carne med ris",
+   "meal": [
+    "main"
+   ],
+   "minutes": 30,
+   "ingredients": [
+    {
+     "id": "beef_mince_10",
+     "g": 100
+    },
+    {
+     "id": "kidney_beans_canned",
+     "g": 150
+    },
+    {
+     "id": "tomato_pulp_canned",
+     "g": 200
+    },
+    {
+     "id": "onion_yellow",
+     "g": 60
+    },
+    {
+     "id": "bell_pepper_red",
+     "g": 80
+    },
+    {
+     "id": "rice_basmati",
+     "g": 60
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Start the rice.",
+    "Brown the mince with onion and pepper in oil.",
+    "Add tomato, beans, chili and cumin. Simmer 15 minutes."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": false
+   }
+  },
+  {
+   "id": "halloumi_veg_couscous",
+   "name": "Halloumi and vegetable pan with couscous",
+   "name_sv": "Halloumi- och grönsakspanna med couscous",
+   "meal": [
+    "main"
+   ],
+   "minutes": 20,
+   "ingredients": [
+    {
+     "id": "halloumi",
+     "g": 100
+    },
+    {
+     "id": "zucchini",
+     "g": 120
+    },
+    {
+     "id": "bell_pepper_red",
+     "g": 100
+    },
+    {
+     "id": "couscous",
+     "g": 60
+    },
+    {
+     "id": "olive_oil",
+     "g": 8
+    },
+    {
+     "id": "tomato",
+     "g": 80
+    }
+   ],
+   "steps": [
+    "Pour boiling water over the couscous, cover 5 minutes.",
+    "Fry the diced vegetables in oil 8 minutes, add sliced halloumi for 3 minutes.",
+    "Fluff the couscous and serve with the pan."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "tuna_egg_salad_bowl",
+   "name": "Tuna and egg salad bowl",
+   "name_sv": "Salladsskål med tonfisk och ägg",
+   "meal": [
+    "main"
+   ],
+   "minutes": 15,
+   "ingredients": [
+    {
+     "id": "lettuce_iceberg",
+     "g": 80
+    },
+    {
+     "id": "tomato",
+     "g": 100
+    },
+    {
+     "id": "cucumber",
+     "g": 80
+    },
+    {
+     "id": "tuna_in_water",
+     "g": 80
+    },
+    {
+     "id": "egg",
+     "g": 120
+    },
+    {
+     "id": "bread_rye_wholegrain",
+     "g": 90
+    },
+    {
+     "id": "olive_oil",
+     "g": 12
+    }
+   ],
+   "steps": [
+    "Boil the eggs for 9 minutes.",
+    "Chop the vegetables into a bowl, add tuna and the halved eggs.",
+    "Dress with oil and salt. Serve with the bread."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "turkey_bulgur_wok",
+   "name": "Turkey and broccoli with bulgur",
+   "name_sv": "Kalkon och broccoli med bulgur",
+   "meal": [
+    "main"
+   ],
+   "minutes": 25,
+   "ingredients": [
+    {
+     "id": "turkey_fillet",
+     "g": 150
+    },
+    {
+     "id": "bulgur",
+     "g": 70
+    },
+    {
+     "id": "broccoli",
+     "g": 120
+    },
+    {
+     "id": "carrot",
+     "g": 60
+    },
+    {
+     "id": "soy_sauce",
+     "g": 10
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 8
+    }
+   ],
+   "steps": [
+    "Simmer the bulgur 10 minutes in twice its volume of water.",
+    "Fry sliced turkey in oil 5 minutes, add vegetables for 6 minutes.",
+    "Season with soy sauce and serve over the bulgur."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": false
+   }
+  },
+  {
+   "id": "pork_hash_egg",
+   "name": "Pork and potato hash with a fried egg",
+   "name_sv": "Pytt i panna med ägg",
+   "meal": [
+    "main"
+   ],
+   "minutes": 30,
+   "ingredients": [
+    {
+     "id": "potato",
+     "g": 250
+    },
+    {
+     "id": "pork_tenderloin",
+     "g": 100
+    },
+    {
+     "id": "onion_yellow",
+     "g": 60
+    },
+    {
+     "id": "egg",
+     "g": 60
+    },
+    {
+     "id": "beetroot",
+     "g": 40
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 10
+    }
+   ],
+   "steps": [
+    "Cut potato and pork in small cubes. Fry the potato in oil 12-15 minutes.",
+    "Add pork and onion for 7 minutes.",
+    "Fry the egg and serve with sliced beetroot."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": false
+   }
+  },
+  {
+   "id": "roast_pork_roots",
+   "name": "Pork tenderloin with roasted root vegetables",
+   "name_sv": "Fläskfilé med ugnsrostade rotfrukter",
+   "meal": [
+    "main"
+   ],
+   "minutes": 30,
+   "ingredients": [
+    {
+     "id": "pork_tenderloin",
+     "g": 150
+    },
+    {
+     "id": "potato",
+     "g": 150
+    },
+    {
+     "id": "carrot",
+     "g": 100
+    },
+    {
+     "id": "parsnip",
+     "g": 80
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 10
+    }
+   ],
+   "steps": [
+    "Heat the oven to 225 C. Cut roots small and roast with oil 25 minutes.",
+    "Brown the sliced pork in a pan 2 minutes per side, then add it to the tray for the last 5 minutes."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": false
+   }
+  },
+  {
+   "id": "salmon_spinach_pasta",
+   "name": "Salmon and spinach pasta",
+   "name_sv": "Lax- och spenatpasta",
+   "meal": [
+    "main"
+   ],
+   "minutes": 25,
+   "ingredients": [
+    {
+     "id": "salmon",
+     "g": 120
+    },
+    {
+     "id": "pasta_dried",
+     "g": 90
+    },
+    {
+     "id": "spinach_frozen",
+     "g": 100
+    },
+    {
+     "id": "creme_fraiche_5",
+     "g": 50
+    },
+    {
+     "id": "garlic",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Cook the pasta.",
+    "Dice the salmon and fry with garlic 4 minutes, add spinach and creme fraiche.",
+    "Simmer 3 minutes and toss with the pasta."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "lentil_feta_plate",
+   "name": "Green lentil salad with feta",
+   "name_sv": "Linssallad med fetaost",
+   "meal": [
+    "main"
+   ],
+   "minutes": 15,
+   "ingredients": [
+    {
+     "id": "green_lentils_canned",
+     "g": 180
+    },
+    {
+     "id": "tomato",
+     "g": 100
+    },
+    {
+     "id": "cucumber",
+     "g": 60
+    },
+    {
+     "id": "feta_proxy",
+     "g": 40
+    },
+    {
+     "id": "olive_oil",
+     "g": 10
+    },
+    {
+     "id": "bread_rye_wholegrain",
+     "g": 60
+    }
+   ],
+   "steps": [
+    "Rinse the lentils and mix with diced tomato and cucumber.",
+    "Add crumbled feta and oil. Serve with the bread."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "chicken_avocado_wraps",
+   "name": "Chicken and avocado wraps",
+   "name_sv": "Tortillas med kyckling och avokado",
+   "meal": [
+    "main"
+   ],
+   "minutes": 20,
+   "ingredients": [
+    {
+     "id": "tortilla_wheat",
+     "g": 90
+    },
+    {
+     "id": "chicken_breast",
+     "g": 120
+    },
+    {
+     "id": "avocado",
+     "g": 70
+    },
+    {
+     "id": "tomato",
+     "g": 80
+    },
+    {
+     "id": "lettuce_iceberg",
+     "g": 40
+    },
+    {
+     "id": "sour_cream_12",
+     "g": 30
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Fry sliced chicken in oil 6 minutes with paprika and salt.",
+    "Warm the tortillas.",
+    "Fill with chicken, avocado, tomato, lettuce and sour cream."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": false
+   }
+  },
+  {
+   "id": "white_bean_kale_stew",
+   "name": "White bean and kale stew with bulgur",
+   "name_sv": "Vit bönstuvning med grönkål och bulgur",
+   "meal": [
+    "main"
+   ],
+   "minutes": 25,
+   "ingredients": [
+    {
+     "id": "white_beans_canned",
+     "g": 180
+    },
+    {
+     "id": "tomato_pulp_canned",
+     "g": 150
+    },
+    {
+     "id": "kale",
+     "g": 80
+    },
+    {
+     "id": "bulgur",
+     "g": 60
+    },
+    {
+     "id": "garlic",
+     "g": 5
+    },
+    {
+     "id": "olive_oil",
+     "g": 8
+    }
+   ],
+   "steps": [
+    "Simmer the bulgur 10 minutes.",
+    "Fry garlic in oil, add tomato, beans and chopped kale. Simmer 12 minutes.",
+    "Serve over the bulgur."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": true,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "coconut_fish_rice",
+   "name": "Coconut fish stew with rice",
+   "name_sv": "Kokosfiskgryta med ris",
+   "meal": [
+    "main"
+   ],
+   "minutes": 25,
+   "ingredients": [
+    {
+     "id": "alaska_pollock",
+     "g": 150
+    },
+    {
+     "id": "coconut_milk",
+     "g": 100
+    },
+    {
+     "id": "bell_pepper_red",
+     "g": 80
+    },
+    {
+     "id": "rice_basmati",
+     "g": 60
+    },
+    {
+     "id": "ginger",
+     "g": 5
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Start the rice.",
+    "Fry pepper and ginger in oil 4 minutes, add coconut milk and simmer 5 minutes.",
+    "Add the fish in chunks and simmer 5 minutes more."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "potato_leek_bacon_soup",
+   "name": "Potato and leek soup with bacon",
+   "name_sv": "Potatis- och purjolökssoppa med bacon",
+   "meal": [
+    "main"
+   ],
+   "minutes": 30,
+   "ingredients": [
+    {
+     "id": "potato",
+     "g": 250
+    },
+    {
+     "id": "leek",
+     "g": 100
+    },
+    {
+     "id": "milk_1_5",
+     "g": 150
+    },
+    {
+     "id": "bacon",
+     "g": 30
+    },
+    {
+     "id": "bread_rye_wholegrain",
+     "g": 60
+    }
+   ],
+   "steps": [
+    "Boil diced potato and sliced leek in 300 ml water for 15 minutes.",
+    "Blend roughly, add the milk and heat.",
+    "Fry the bacon crisp and sprinkle on top. Serve with bread."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": false
+   }
+  },
+  {
+   "id": "cauliflower_soup",
+   "name": "Cauliflower soup with cheese",
+   "name_sv": "Blomkålssoppa med ost",
+   "meal": [
+    "main"
+   ],
+   "minutes": 25,
+   "ingredients": [
+    {
+     "id": "cauliflower",
+     "g": 250
+    },
+    {
+     "id": "potato",
+     "g": 100
+    },
+    {
+     "id": "milk_1_5",
+     "g": 100
+    },
+    {
+     "id": "parmesan",
+     "g": 15
+    },
+    {
+     "id": "bread_rye_wholegrain",
+     "g": 70
+    },
+    {
+     "id": "cottage_cheese",
+     "g": 60
+    }
+   ],
+   "steps": [
+    "Boil cauliflower and potato in 300 ml water for 15 minutes.",
+    "Blend with the milk, season and stir in the parmesan.",
+    "Serve with bread and cottage cheese."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "herring_potato_plate",
+   "name": "Herring with potatoes and sour cream",
+   "name_sv": "Sill med potatis och gräddfil",
+   "meal": [
+    "main"
+   ],
+   "minutes": 25,
+   "ingredients": [
+    {
+     "id": "herring",
+     "g": 150
+    },
+    {
+     "id": "potato",
+     "g": 250
+    },
+    {
+     "id": "sour_cream_12",
+     "g": 30
+    },
+    {
+     "id": "chives",
+     "g": 5
+    },
+    {
+     "id": "green_beans",
+     "g": 100
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 8
+    }
+   ],
+   "steps": [
+    "Boil the potatoes 18 minutes, add green beans for the last 5.",
+    "Fry the herring fillets in oil 2-3 minutes per side.",
+    "Serve with sour cream and chives."
+   ],
+   "tags": {
+    "vegetarian": false,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "tempeh_veg_rice",
+   "name": "Tempeh stir-fry with cabbage and rice",
+   "name_sv": "Tempehwok med kål och ris",
+   "meal": [
+    "main"
+   ],
+   "minutes": 25,
+   "ingredients": [
+    {
+     "id": "tempeh",
+     "g": 120
+    },
+    {
+     "id": "cabbage_white",
+     "g": 150
+    },
+    {
+     "id": "carrot",
+     "g": 60
+    },
+    {
+     "id": "rice_white",
+     "g": 70
+    },
+    {
+     "id": "soy_sauce",
+     "g": 15
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 8
+    },
+    {
+     "id": "ginger",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Start the rice.",
+    "Fry cubed tempeh in oil until golden, add shredded cabbage, carrot and ginger for 7 minutes.",
+    "Season with soy sauce and serve over the rice."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": true,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "egg_fried_rice_veg",
+   "name": "Egg fried rice with vegetables",
+   "name_sv": "Stekt ris med ägg och grönsaker",
+   "meal": [
+    "main"
+   ],
+   "minutes": 25,
+   "ingredients": [
+    {
+     "id": "rice_white",
+     "g": 75
+    },
+    {
+     "id": "egg",
+     "g": 120
+    },
+    {
+     "id": "vegetable_mix_peas_carrot_frozen",
+     "g": 120
+    },
+    {
+     "id": "soy_sauce",
+     "g": 15
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 8
+    }
+   ],
+   "steps": [
+    "Boil the rice and let it steam dry.",
+    "Fry the frozen vegetables in oil, push aside and scramble the eggs.",
+    "Add the rice and soy sauce and stir-fry 3 minutes."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": false,
+    "pescatarian": true
+   }
+  },
+  {
+   "id": "soy_mince_tacos",
+   "name": "Soy mince tacos with salad",
+   "name_sv": "Tacos med sojafärs",
+   "meal": [
+    "main"
+   ],
+   "minutes": 20,
+   "ingredients": [
+    {
+     "id": "soy_mince",
+     "g": 120
+    },
+    {
+     "id": "tortilla_wheat",
+     "g": 80
+    },
+    {
+     "id": "tomato",
+     "g": 100
+    },
+    {
+     "id": "lettuce_iceberg",
+     "g": 60
+    },
+    {
+     "id": "avocado",
+     "g": 50
+    },
+    {
+     "id": "rapeseed_oil",
+     "g": 5
+    }
+   ],
+   "steps": [
+    "Fry the soy mince in oil with taco spices 6 minutes.",
+    "Warm the tortillas.",
+    "Fill with mince, tomato, lettuce and avocado."
+   ],
+   "tags": {
+    "vegetarian": true,
+    "vegan": true,
+    "pescatarian": true
+   }
+  }
+ ]
+}

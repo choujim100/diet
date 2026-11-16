@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eat Better</title>
+  <meta name="description" content="Weekly Lidl meal plan and nutrition tracker for Stockholm, built on Livsmedelsverket food data.">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo" aria-hidden="true">🥦</span><h1>Eat Better</h1></div>
+    <nav id="tabs" aria-label="Sections"></nav>
+  </header>
+  <main id="view" tabindex="-1"><p class="muted pad">Loading food data…</p></main>
+  <footer class="foot">
+    Nutrient values: <a href="https://www.livsmedelsverket.se/en/about-us/open-data/food-composition-data/" target="_blank" rel="noopener">Livsmedelsverket (Swedish Food Agency), Livsmedelsdatabasen</a>, CC BY 4.0.
+    Targets: Nordic Nutrition Recommendations 2023. General reference values, not medical advice.
+    Your data stays in this browser.
+  </footer>
+  <div id="modal" class="modal" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+    // If the app script never starts, say why instead of showing "Loading" forever.
+    (function () {
+      function show(text) {
+        var v = document.getElementById('view');
+        if (!v || window.__eatBooted) return;
+        v.textContent = '';
+        var d = document.createElement('div');
+        d.className = 'banner bad';
+        d.textContent = text;
+        v.appendChild(d);
+      }
+      if (location.protocol === 'file:') {
+        show('This page was opened as a file. Start the local server (see README: python tools/serve.py) and open http://localhost:8765 instead.');
+        return;
+      }
+      window.addEventListener('error', function (e) {
+        show('The app failed to start: ' + (e.message || 'script error') + (e.filename ? ' (' + e.filename.split('/').pop() + ':' + e.lineno + ')' : '') + '. Try a hard refresh (Ctrl+F5).');
+      });
+      setTimeout(function () {
+        show('The app did not start. Try a hard refresh (Ctrl+F5). If it persists, open the browser console (F12) and send me the red error.');
+      }, 6000);
+    })();
+  </script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

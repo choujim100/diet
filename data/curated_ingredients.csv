@@ -1,0 +1,139 @@
+id,category,slv_number,note
+chicken_breast,protein,1173,raw without skin
+chicken_thigh,protein,1174,raw without skin
+turkey_fillet,protein,1162,raw
+beef_mince_10,protein,951,raw 10% fat
+beef_mince_15,protein,963,raw 15% fat
+pork_mince_8,protein,992,raw 8% fat
+pork_tenderloin,protein,970,raw
+bacon,protein,1003,raw
+salmon,fish,1255,farmed raw
+cod,fish,1246,raw
+alaska_pollock,fish,4615,raw
+mackerel,fish,1260,raw
+herring,fish,1241,raw
+tuna_in_water,fish,1278,canned drained
+sardines_in_oil,fish,1271,canned
+shrimp,fish,1395,boiled
+egg,protein,1225,raw whole egg
+tofu,plant_protein,905,
+tempeh,plant_protein,7027,
+soy_mince,plant_protein,2068,plant-based mince chilled or frozen
+milk_1_5,dairy,150,semi-skimmed fortified
+milk_3,dairy,123,fortified
+milk_skimmed,dairy,151,fortified
+yoghurt_plain_3,dairy,124,plain fortified
+yoghurt_plain_skimmed,dairy,135,0.5% fat
+quark_plain,dairy,3243,0.2% fat; closest Swedish-database match for skyr (no skyr entry)
+cottage_cheese,dairy,70,plain 4% fat
+lattfil,dairy,120,fermented milk 0.5% fat
+cheese_hard_17,dairy,95,
+cheese_hard_26,dairy,79,
+mozzarella,dairy,2255,18% fat
+feta_proxy,dairy,94,"white sheep and goat milk cheese 22% fat; used as feta proxy, check against label"
+halloumi,dairy,100,22% fat
+cream_cheese_15,dairy,108,
+sour_cream_12,dairy,1713,
+creme_fraiche_5,dairy,2046,skimmed 5% fat
+butter,fat,29,80% fat
+ricotta,dairy,7022,
+parmesan,dairy,103,
+oat_drink,dairy_alt,700,1.5% fat fortified
+soy_drink,dairy_alt,3668,fortified
+oats_rolled,grain,702,wholegrain dry
+rice_basmati,grain,2475,dry uncooked
+rice_white,grain,2484,pre-boiled dried uncooked
+rice_brown_boiled,grain,804,cooked weight
+pasta_dried,grain,845,dry uncooked
+pasta_wholegrain,grain,848,dry uncooked
+couscous,grain,831,dry
+bulgur,grain,829,dry
+quinoa,grain,7025,uncooked
+egg_noodles,grain,870,dried
+rice_noodles,grain,4447,dry
+bread_rye_wholegrain,grain,3797,approx. 7% fibre
+bread_wheat_rye,grain,3794,wholegrain approx. 6% fibre
+tortilla_wheat,grain,5974,white tortilla bread
+muesli,grain,712,wholegrain unsweetened type
+lentils_dried,legume,884,dry
+red_lentils_canned,legume,3823,canned drained
+green_lentils_canned,legume,3824,canned drained
+chickpeas_canned,legume,3815,canned drained
+chickpeas_dried,legume,881,dry
+kidney_beans_canned,legume,3816,canned drained
+white_beans_canned,legume,3761,canned drained
+black_beans_canned,legume,3817,canned drained
+green_peas_frozen,legume,374,
+edamame,legume,5860,parboiled without pod
+broccoli,vegetable,325,raw
+cauliflower,vegetable,322,raw
+carrot,vegetable,289,raw
+onion_yellow,vegetable,344,raw
+garlic,vegetable,371,raw
+tomato,vegetable,364,raw
+tomato_pulp_canned,vegetable,422,canned
+tomato_puree,vegetable,410,concentrated canned
+cucumber,vegetable,339,raw
+bell_pepper_red,vegetable,351,raw
+zucchini,vegetable,362,"listed as ""Squash"" in the source; assumed courgette, verify"
+spinach_raw,vegetable,4941,raw
+spinach_frozen,vegetable,361,
+cabbage_white,vegetable,370,raw
+cabbage_red,vegetable,355,raw
+kale,vegetable,337,raw
+leek,vegetable,354,raw
+mushroom_button,vegetable,333,raw
+lettuce_iceberg,vegetable,340,raw
+beetroot,vegetable,294,raw
+sweet_potato,vegetable,3765,raw
+potato,vegetable,230,old potato raw
+swede,vegetable,288,raw
+celery,vegetable,321,raw
+avocado,vegetable,320,raw
+green_beans,vegetable,331,
+vegetable_mix_peas_carrot_frozen,vegetable,388,frozen
+corn_kernels_frozen,vegetable,347,
+aubergine,vegetable,372,raw
+pumpkin,vegetable,353,raw
+parsnip,vegetable,290,raw
+asparagus_green,vegetable,5861,boiled
+chili_pepper,vegetable,380,raw
+ginger,vegetable,2269,fresh
+parsley,herb,352,leaf parsley
+dill,herb,377,fresh
+basil,herb,379,fresh
+chives,herb,378,
+banana,fruit,553,
+apple,fruit,588,with skin
+orange,fruit,551,
+pear,fruit,583,
+blueberries_frozen,fruit,556,
+strawberries,fruit,526,
+raspberries,fruit,523,
+kiwi,fruit,565,green
+grapes,fruit,587,
+lemon,fruit,559,
+mango_frozen,fruit,5135,
+pineapple,fruit,550,
+raisins,fruit,610,dried
+dates,fruit,603,dried
+almonds,nut_seed,1575,listed as sweet almond
+walnuts,nut_seed,1576,
+peanuts,nut_seed,1560,dried
+peanut_butter,nut_seed,1559,
+cashews,nut_seed,1557,roasted without salt
+flaxseed,nut_seed,1567,linseeds whole
+pumpkin_seeds,nut_seed,1571,
+sunflower_seeds,nut_seed,1574,
+chia_seeds,nut_seed,6157,
+sesame_seeds,nut_seed,1572,with husk
+tahini,nut_seed,3602,calculated
+rapeseed_oil,fat,2189,
+olive_oil,fat,35,
+coconut_milk,fat,1590,
+mayonnaise_30,pantry,53,30% fat
+soy_sauce,pantry,909,
+honey,pantry,1896,
+pesto,pantry,2004,
+hummus,pantry,3051,calculated
+olives_black,pantry,402,drained

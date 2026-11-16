@@ -1,0 +1,5 @@
+# raw downloads (82 MB) and the archived Open Food Facts dumps (separate ODbL licence); rebuild with tools/build_dataset.py --all
+**/data/raw/
+__pycache__/
+*.pyc
+matches.json

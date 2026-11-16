@@ -1,0 +1,36 @@
+{
+  "source": "Nordic Nutrition Recommendations 2023, as summarised by Livsmedelsverket in 'Slutleverans: Nordiska näringsrekommendationer 2023' (PDF, 28 pages). Tables read from the rendered pages on 2026-11-16.",
+  "source_url": "https://www.livsmedelsverket.se/globalassets/publikationsdatabas/broschyrer-foldrar/slutleverans_nordiska-naringsrekommendationer-2023.pdf",
+  "where": "Table 4 (macronutrient ranges), Table 7 (RI vitamins, p.16), Table 8 (AI vitamins, p.17), Table 9 (RI minerals, p.18), Table 10 (AI minerals, p.19), Table 11 (sodium and salt maximum, p.20)",
+  "notes": [
+    "These are reference values for groups of healthy adults, not personal medical advice.",
+    "Iron for women 51-70 is 8 mg, but the source says to use the 25-50 value (15 mg) for those who still menstruate. The 15 mg value for women 18-50 is for those who menstruate; heavy bleeding needs individual advice.",
+    "RI = recommended intake. AI = adequate intake (used where an RI cannot be set).",
+    "Free sugar is not tracked in this app because the Swedish food database gives total sugars, not free sugar."
+  ],
+  "macro": {
+    "fat_e_pct": [25, 40],
+    "saturated_fat_e_pct_max": 10,
+    "carbs_e_pct": [45, 60],
+    "free_sugar_e_pct_max": 10,
+    "protein_e_pct": [10, 20],
+    "protein_e_pct_planning_target": 15,
+    "fibre_g": [25, 35]
+  },
+  "salt_g_max": 5.75,
+  "sodium_g_max": 2.3,
+  "kind": {
+    "vitamin_a_re_ug": "RI", "vitamin_d_ug": "RI", "riboflavin_mg": "RI", "vitamin_b6_mg": "RI",
+    "folate_ug": "RI", "vitamin_c_mg": "RI", "calcium_mg": "RI", "iron_mg": "RI", "zinc_mg": "RI",
+    "vitamin_e_mg": "AI", "vitamin_b12_ug": "AI", "magnesium_mg": "AI", "potassium_mg": "AI",
+    "selenium_ug": "AI", "iodine_ug": "AI", "phosphorus_mg": "AI"
+  },
+  "profiles": {
+    "f_18_24": {"label": "Woman 18-24", "vitamin_a_re_ug": 700, "vitamin_d_ug": 10, "vitamin_e_mg": 10, "vitamin_b6_mg": 1.6, "riboflavin_mg": 1.6, "folate_ug": 330, "vitamin_c_mg": 95, "vitamin_b12_ug": 4.0, "calcium_mg": 1000, "iron_mg": 15, "zinc_mg": 9.7, "magnesium_mg": 300, "potassium_mg": 3500, "selenium_ug": 75, "iodine_ug": 150, "phosphorus_mg": 550},
+    "f_25_50": {"label": "Woman 25-50", "vitamin_a_re_ug": 700, "vitamin_d_ug": 10, "vitamin_e_mg": 10, "vitamin_b6_mg": 1.6, "riboflavin_mg": 1.6, "folate_ug": 330, "vitamin_c_mg": 95, "vitamin_b12_ug": 4.0, "calcium_mg": 950, "iron_mg": 15, "zinc_mg": 9.7, "magnesium_mg": 300, "potassium_mg": 3500, "selenium_ug": 75, "iodine_ug": 150, "phosphorus_mg": 520},
+    "f_51_70": {"label": "Woman 51-70", "vitamin_a_re_ug": 700, "vitamin_d_ug": 10, "vitamin_e_mg": 9, "vitamin_b6_mg": 1.6, "riboflavin_mg": 1.6, "folate_ug": 330, "vitamin_c_mg": 95, "vitamin_b12_ug": 4.0, "calcium_mg": 950, "iron_mg": 8, "zinc_mg": 9.5, "magnesium_mg": 300, "potassium_mg": 3500, "selenium_ug": 75, "iodine_ug": 150, "phosphorus_mg": 520},
+    "m_18_24": {"label": "Man 18-24", "vitamin_a_re_ug": 800, "vitamin_d_ug": 10, "vitamin_e_mg": 11, "vitamin_b6_mg": 1.8, "riboflavin_mg": 1.6, "folate_ug": 330, "vitamin_c_mg": 110, "vitamin_b12_ug": 4.0, "calcium_mg": 1000, "iron_mg": 9, "zinc_mg": 12.7, "magnesium_mg": 350, "potassium_mg": 3500, "selenium_ug": 90, "iodine_ug": 150, "phosphorus_mg": 550},
+    "m_25_50": {"label": "Man 25-50", "vitamin_a_re_ug": 800, "vitamin_d_ug": 10, "vitamin_e_mg": 11, "vitamin_b6_mg": 1.8, "riboflavin_mg": 1.6, "folate_ug": 330, "vitamin_c_mg": 110, "vitamin_b12_ug": 4.0, "calcium_mg": 950, "iron_mg": 9, "zinc_mg": 12.7, "magnesium_mg": 350, "potassium_mg": 3500, "selenium_ug": 90, "iodine_ug": 150, "phosphorus_mg": 520},
+    "m_51_70": {"label": "Man 51-70", "vitamin_a_re_ug": 800, "vitamin_d_ug": 10, "vitamin_e_mg": 11, "vitamin_b6_mg": 1.8, "riboflavin_mg": 1.6, "folate_ug": 330, "vitamin_c_mg": 110, "vitamin_b12_ug": 4.0, "calcium_mg": 950, "iron_mg": 9, "zinc_mg": 12.4, "magnesium_mg": 350, "potassium_mg": 3500, "selenium_ug": 90, "iodine_ug": 150, "phosphorus_mg": 520}
+  }
+}
