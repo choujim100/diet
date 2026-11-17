@@ -12,7 +12,7 @@ const MAP = [
   ['carbs_g', 'carbohydrates', 1], ['sugars_g', 'sugars', 1], ['fibre_g', 'fiber', 1],
   ['vitamin_d_ug', 'vitamin-d', 1e6], ['vitamin_b12_ug', 'vitamin-b12', 1e6], ['folate_ug', 'vitamin-b9', 1e6],
   ['vitamin_c_mg', 'vitamin-c', 1e3], ['vitamin_a_re_ug', 'vitamin-a', 1e6], ['vitamin_e_mg', 'vitamin-e', 1e3],
-  ['vitamin_b6_mg', 'vitamin-b6', 1e3], ['riboflavin_mg', 'vitamin-b2', 1e3],
+  ['vitamin_b6_mg', 'vitamin-b6', 1e3], ['riboflavin_mg', 'vitamin-b2', 1e3], ['thiamin_mg', 'vitamin-b1', 1e3], ['niacin_eq_mg', 'vitamin-pp', 1e3],
   ['calcium_mg', 'calcium', 1e3], ['iron_mg', 'iron', 1e3], ['zinc_mg', 'zinc', 1e3], ['magnesium_mg', 'magnesium', 1e3],
   ['potassium_mg', 'potassium', 1e3], ['selenium_ug', 'selenium', 1e6], ['iodine_ug', 'iodine', 1e6], ['phosphorus_mg', 'phosphorus', 1e3],
 ];
@@ -47,7 +47,7 @@ export function fromOff(p) {
   const notes = [];
   if (p.nutrition_data_per === 'serving' && !num(p.serving_quantity)) notes.push('Entered per serving without a serving size, so the per-100 g values may be wrong.');
   return {
-    code: p.code, name: p.product_name_sv || p.product_name || '', brand: p.brands || '', quantity: p.quantity || '',
+    code: p.code, name: p.product_name_sv || p.product_name || '', brand: p.brands || '', quantity: p.quantity || '', pack: num(p.product_quantity),
     per100, kj, added_sugars: num(n['added-sugars_100g']), salt_raw: salt, sodium_raw: sodium, grams, source: 'openfoodfacts', notes,
   };
 }

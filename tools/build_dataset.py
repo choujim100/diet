@@ -40,6 +40,7 @@ NUTRIENTS = {
     "VITA": ("vitamin_a_re_ug", "ug"), "VITE": ("vitamin_e_mg", "mg"),
     "VITB6": ("vitamin_b6_mg", "mg"), "RIBF": ("riboflavin_mg", "mg"),
     "THIACLHCL": ("thiamin_mg", "mg"), "NIA": ("niacin_mg", "mg"),
+    "NIAEQ": ("niacin_eq_mg", "NE/mg"),  # niacin equivalents, the unit NNR 2023 uses for niacin
     "F20:5": ("epa_g", "g"), "F22:6": ("dha_g", "g"),
 }
 CORE = ["energy_kcal", "protein_g", "fat_g", "saturated_fat_g", "carbs_g", "sugars_g", "salt_g"]

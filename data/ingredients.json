@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-16",
+  "generated": "2026-11-17",
   "source": "Livsmedelsverket Livsmedelsdatabasen (CC BY 4.0). Credit: Swedish Food Agency.",
   "basis": "per 100 g edible portion unless stated",
   "units": "energy_kcal, energy_kj; *_g grams; *_mg milligrams; *_ug micrograms",
@@ -88,6 +88,10 @@
     },
     "phosphorus_mg": {
      "value": 196,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 16.24,
      "type": "BE"
     },
     "niacin_mg": {
@@ -246,6 +250,10 @@
      "value": 168,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 9.92,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 6.33,
      "type": "BE"
@@ -401,6 +409,10 @@
     "phosphorus_mg": {
      "value": 220,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 13.3,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 8.85,
@@ -558,6 +570,10 @@
      "value": 162,
      "type": "W"
     },
+    "niacin_eq_mg": {
+     "value": 8.0,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 4.36,
      "type": "W"
@@ -714,6 +730,10 @@
      "value": 160,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 7.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 4.37,
      "type": "MN"
@@ -868,6 +888,10 @@
     },
     "phosphorus_mg": {
      "value": 204,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 12.11,
      "type": "BE"
     },
     "niacin_mg": {
@@ -1026,6 +1050,10 @@
      "value": 204,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 12.32,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 8.54,
      "type": "BE"
@@ -1180,6 +1208,10 @@
     },
     "phosphorus_mg": {
      "value": 142,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 5.23,
      "type": "BE"
     },
     "niacin_mg": {
@@ -1338,6 +1370,10 @@
      "value": 234,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 11.4,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 8.03,
      "type": "MN"
@@ -1493,6 +1529,10 @@
     "phosphorus_mg": {
      "value": 217,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 5.5,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 2.16,
@@ -1650,6 +1690,10 @@
      "value": 151,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 4.0,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.82,
      "type": "MN"
@@ -1805,6 +1849,10 @@
     "phosphorus_mg": {
      "value": 194,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 11.4,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 8.3,
@@ -1962,6 +2010,10 @@
      "value": 276,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 8.0,
+     "type": null
+    },
     "niacin_mg": {
      "value": 4.96,
      "type": "MN"
@@ -2117,6 +2169,10 @@
     "phosphorus_mg": {
      "value": 206,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 16.5,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 12.1,
@@ -2274,6 +2330,10 @@
      "value": 300,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 11.1,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 6.7,
      "type": null
@@ -2429,6 +2489,10 @@
     "phosphorus_mg": {
      "value": 147,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 4.2,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.99,
@@ -2586,6 +2650,10 @@
      "value": 190,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 3.0,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.0,
      "type": "TR"
@@ -2740,6 +2808,10 @@
     },
     "phosphorus_mg": {
      "value": 110,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 1.2,
      "type": "BE"
     },
     "niacin_mg": {
@@ -2898,6 +2970,10 @@
      "value": 266,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 5.7,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 2.6,
      "type": "BE"
@@ -3054,6 +3130,10 @@
      "value": 200,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 2.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.38,
      "type": "MN"
@@ -3208,6 +3288,10 @@
     },
     "phosphorus_mg": {
      "value": 140,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 1.0,
      "type": "BE"
     },
     "niacin_mg": {
@@ -3366,6 +3450,10 @@
      "value": 138,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 0.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.11,
      "type": "BE"
@@ -3520,6 +3608,10 @@
     },
     "phosphorus_mg": {
      "value": 141,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 1.0,
      "type": "BE"
     },
     "niacin_mg": {
@@ -3678,6 +3770,10 @@
      "value": 91,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.11,
      "type": "MN"
@@ -3833,6 +3929,10 @@
     "phosphorus_mg": {
      "value": 98,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 1.0,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.11,
@@ -3990,6 +4090,10 @@
      "value": 112,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 2.6,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.25,
      "type": "MN"
@@ -4146,6 +4250,10 @@
      "value": 134,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 3.2,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.08,
      "type": "MN"
@@ -4300,6 +4408,10 @@
     },
     "phosphorus_mg": {
      "value": 94,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 0.76,
      "type": "BE"
     },
     "niacin_mg": {
@@ -4458,6 +4570,10 @@
      "value": 540,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 7.1,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.0,
      "type": "BL"
@@ -4612,6 +4728,10 @@
     },
     "phosphorus_mg": {
      "value": 530,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 5.5,
      "type": "BE"
     },
     "niacin_mg": {
@@ -4770,6 +4890,10 @@
      "value": 227,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 3.6,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.0,
      "type": "TR"
@@ -4925,6 +5049,10 @@
     "phosphorus_mg": {
      "value": 222,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 4.1,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.24,
@@ -5082,6 +5210,10 @@
      "value": 406,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 5.3,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.08,
      "type": "MN"
@@ -5236,6 +5368,10 @@
     },
     "phosphorus_mg": {
      "value": 57,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 1.86,
      "type": "BE"
     },
     "niacin_mg": {
@@ -5394,6 +5530,10 @@
      "value": 94,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.7,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.1,
      "type": "MN"
@@ -5548,6 +5688,10 @@
     },
     "phosphorus_mg": {
      "value": 96,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 1.0,
      "type": "BE"
     },
     "niacin_mg": {
@@ -5706,6 +5850,10 @@
      "value": 22,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 0.1,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.0,
      "type": "BE"
@@ -5860,6 +6008,10 @@
     },
     "phosphorus_mg": {
      "value": 237,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 2.5,
      "type": "BE"
     },
     "niacin_mg": {
@@ -6018,6 +6170,10 @@
      "value": 590,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 7.3,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.06,
      "type": "MN"
@@ -6173,6 +6329,10 @@
     "phosphorus_mg": {
      "value": 65,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.2,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.08,
@@ -6330,6 +6490,10 @@
      "value": 90,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.6,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.12,
      "type": "MN"
@@ -6486,6 +6650,10 @@
      "value": 360,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 2.4,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.8,
      "type": "MN"
@@ -6640,6 +6808,10 @@
     },
     "phosphorus_mg": {
      "value": 101,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 2.8,
      "type": "BE"
     },
     "niacin_mg": {
@@ -6798,6 +6970,10 @@
      "value": 165,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 5.4,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 4.0,
      "type": "BE"
@@ -6953,6 +7129,10 @@
     "phosphorus_mg": {
      "value": 87,
      "type": null
+    },
+    "niacin_eq_mg": {
+     "value": 1.82,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 1.4,
@@ -7110,6 +7290,10 @@
      "value": 162,
      "type": null
     },
+    "niacin_eq_mg": {
+     "value": 3.68,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 1.7,
      "type": null
@@ -7266,6 +7450,10 @@
      "value": 100,
      "type": null
     },
+    "niacin_eq_mg": {
+     "value": 6.33,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 4.5,
      "type": null
@@ -7420,6 +7608,10 @@
     },
     "phosphorus_mg": {
      "value": 170,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 5.62,
      "type": "BE"
     },
     "niacin_mg": {
@@ -7578,6 +7770,10 @@
      "value": 300,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 7.16,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 5.11,
      "type": "BE"
@@ -7732,6 +7928,10 @@
     },
     "phosphorus_mg": {
      "value": 457,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 3.9,
      "type": "BE"
     },
     "niacin_mg": {
@@ -7890,6 +8090,10 @@
      "value": 214,
      "type": null
     },
+    "niacin_eq_mg": {
+     "value": 4.43,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 2.1,
      "type": null
@@ -8044,6 +8248,10 @@
     },
     "phosphorus_mg": {
      "value": 153,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 0.79,
      "type": "BE"
     },
     "niacin_mg": {
@@ -8202,6 +8410,10 @@
      "value": 165,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 3.7,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 2.16,
      "type": "MN"
@@ -8357,6 +8569,10 @@
     "phosphorus_mg": {
      "value": 124,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 2.4,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 1.13,
@@ -8514,6 +8730,10 @@
      "value": 156,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 1.7,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.9,
      "type": "MN"
@@ -8668,6 +8888,10 @@
     },
     "phosphorus_mg": {
      "value": 273,
+     "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 5.14,
      "type": "MN"
     },
     "niacin_mg": {
@@ -8826,6 +9050,10 @@
      "value": 310,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 5.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 1.81,
      "type": "MN"
@@ -8982,6 +9210,10 @@
      "value": 71,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 1.5,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.35,
      "type": "MN"
@@ -9136,6 +9368,10 @@
     },
     "phosphorus_mg": {
      "value": 76,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 1.4,
      "type": "BE"
     },
     "niacin_mg": {
@@ -9294,6 +9530,10 @@
      "value": 103,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 1.5,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.2,
      "type": "MN"
@@ -9449,6 +9689,10 @@
     "phosphorus_mg": {
      "value": 267,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 5.2,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 2.1,
@@ -9606,6 +9850,10 @@
      "value": 104,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 1.8,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.39,
      "type": "MN"
@@ -9761,6 +10009,10 @@
     "phosphorus_mg": {
      "value": 81,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 1.6,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.42,
@@ -9918,6 +10170,10 @@
      "value": 91,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 1.7,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.35,
      "type": "MN"
@@ -10073,6 +10329,10 @@
     "phosphorus_mg": {
      "value": 88,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 2.5,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 1.61,
@@ -10230,6 +10490,10 @@
      "value": 146,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 2.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 1.05,
      "type": "MN"
@@ -10385,6 +10649,10 @@
     "phosphorus_mg": {
      "value": 69,
      "type": "AV"
+    },
+    "niacin_eq_mg": {
+     "value": 0.9,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.4,
@@ -10542,6 +10810,10 @@
      "value": 45,
      "type": "AV"
     },
+    "niacin_eq_mg": {
+     "value": 0.6,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.3,
      "type": "AV"
@@ -10697,6 +10969,10 @@
     "phosphorus_mg": {
      "value": 23,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.9,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.8,
@@ -10854,6 +11130,10 @@
      "value": 33,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.3,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.14,
      "type": "MN"
@@ -11009,6 +11289,10 @@
     "phosphorus_mg": {
      "value": 118,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 1.5,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.37,
@@ -11166,6 +11450,10 @@
      "value": 22,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.7,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.58,
      "type": "MN"
@@ -11321,6 +11609,10 @@
     "phosphorus_mg": {
      "value": 22,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 1.1,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.94,
@@ -11478,6 +11770,10 @@
      "value": 94,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 4.3,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 3.6,
      "type": "MN"
@@ -11633,6 +11929,10 @@
     "phosphorus_mg": {
      "value": 25,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.3,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.19,
@@ -11790,6 +12090,10 @@
      "value": 15,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.79,
      "type": "MN"
@@ -11945,6 +12249,10 @@
     "phosphorus_mg": {
      "value": 28,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.5,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.45,
@@ -12102,6 +12410,10 @@
      "value": 45,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 1.2,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.6,
      "type": "MN"
@@ -12257,6 +12569,10 @@
     "phosphorus_mg": {
      "value": 33,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.6,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.23,
@@ -12414,6 +12730,10 @@
      "value": 28,
      "type": "AV"
     },
+    "niacin_eq_mg": {
+     "value": 0.4,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.19,
      "type": "AV"
@@ -12569,6 +12889,10 @@
     "phosphorus_mg": {
      "value": 25,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.6,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.39,
@@ -12726,6 +13050,10 @@
      "value": 69,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 2.5,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 1.89,
      "type": "MN"
@@ -12881,6 +13209,10 @@
     "phosphorus_mg": {
      "value": 29,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.7,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.48,
@@ -13038,6 +13370,10 @@
      "value": 15,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 3.0,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 2.6,
      "type": "MN"
@@ -13193,6 +13529,10 @@
     "phosphorus_mg": {
      "value": 23,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.4,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.22,
@@ -13350,6 +13690,10 @@
      "value": 28,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.4,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.18,
      "type": "MN"
@@ -13505,6 +13849,10 @@
     "phosphorus_mg": {
      "value": 37,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.7,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.43,
@@ -13662,6 +14010,10 @@
      "value": 44,
      "type": null
     },
+    "niacin_eq_mg": {
+     "value": 2.4,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 2.1,
      "type": null
@@ -13817,6 +14169,10 @@
     "phosphorus_mg": {
      "value": 30,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 1.7,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 1.48,
@@ -13974,6 +14330,10 @@
      "value": 45,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.6,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.48,
      "type": "MN"
@@ -14129,6 +14489,10 @@
     "phosphorus_mg": {
      "value": 67,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 2.1,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 1.79,
@@ -14286,6 +14650,10 @@
      "value": 38,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 1.1,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.8,
      "type": "MN"
@@ -14441,6 +14809,10 @@
     "phosphorus_mg": {
      "value": 28,
      "type": null
+    },
+    "niacin_eq_mg": {
+     "value": 1.82,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 1.2,
@@ -14598,6 +14970,10 @@
      "value": 65,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 2.0,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 1.47,
      "type": "MN"
@@ -14754,6 +15130,10 @@
      "value": 24,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.8,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.58,
      "type": "MN"
@@ -14908,6 +15288,10 @@
     },
     "phosphorus_mg": {
      "value": 44,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 0.77,
      "type": "BE"
     },
     "niacin_mg": {
@@ -15066,6 +15450,10 @@
      "value": 56,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 2.5,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 2.18,
      "type": "MN"
@@ -15221,6 +15609,10 @@
     "phosphorus_mg": {
      "value": 37,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 1.2,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.92,
@@ -15378,6 +15770,10 @@
      "value": 51,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 1.3,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.89,
      "type": "MN"
@@ -15533,6 +15929,10 @@
     "phosphorus_mg": {
      "value": 44,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.8,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.42,
@@ -15690,6 +16090,10 @@
      "value": 79,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 1.3,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.36,
      "type": "MN"
@@ -15844,6 +16248,10 @@
     },
     "phosphorus_mg": {
      "value": 85,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 3.02,
      "type": "BE"
     },
     "niacin_mg": {
@@ -16002,6 +16410,10 @@
      "value": 69,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 1.35,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.92,
      "type": "BE"
@@ -16156,6 +16568,10 @@
     },
     "phosphorus_mg": {
      "value": 51,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 1.07,
      "type": "BE"
     },
     "niacin_mg": {
@@ -16314,6 +16730,10 @@
      "value": 23,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.7,
      "type": "MN"
@@ -16468,6 +16888,10 @@
     },
     "phosphorus_mg": {
      "value": 7,
+     "type": "AV"
+    },
+    "niacin_eq_mg": {
+     "value": 0.12,
      "type": "AV"
     },
     "niacin_mg": {
@@ -16626,6 +17050,10 @@
      "value": 16,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.6,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.5,
      "type": "MN"
@@ -16782,6 +17210,10 @@
      "value": 9,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.3,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.2,
      "type": "MN"
@@ -16936,6 +17368,10 @@
     },
     "phosphorus_mg": {
      "value": 20,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 0.38,
      "type": "BE"
     },
     "niacin_mg": {
@@ -17094,6 +17530,10 @@
      "value": 20,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.5,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.44,
      "type": null
@@ -17248,6 +17688,10 @@
     },
     "phosphorus_mg": {
      "value": 28,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 0.7,
      "type": "BE"
     },
     "niacin_mg": {
@@ -17406,6 +17850,10 @@
      "value": 33,
      "type": "AV"
     },
+    "niacin_eq_mg": {
+     "value": 0.4,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.28,
      "type": "AV"
@@ -17562,6 +18010,10 @@
      "value": 18,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.3,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.2,
      "type": "MN"
@@ -17716,6 +18168,10 @@
     },
     "phosphorus_mg": {
      "value": 15,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 0.4,
      "type": "BE"
     },
     "niacin_mg": {
@@ -17874,6 +18330,10 @@
      "value": 7,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.5,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.36,
      "type": "MN"
@@ -18029,6 +18489,10 @@
     "phosphorus_mg": {
      "value": 6,
      "type": "AV"
+    },
+    "niacin_eq_mg": {
+     "value": 0.3,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.15,
@@ -18186,6 +18650,10 @@
      "value": 79,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.6,
      "type": "MN"
@@ -18341,6 +18809,10 @@
     "phosphorus_mg": {
      "value": 68,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 1.7,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 1.3,
@@ -18498,6 +18970,10 @@
      "value": 587,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 7.6,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 4.17,
      "type": "MN"
@@ -18654,6 +19130,10 @@
      "value": 386,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 3.4,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 1.1,
      "type": "MN"
@@ -18808,6 +19288,10 @@
     },
     "phosphorus_mg": {
      "value": 385,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 18.48,
      "type": "BE"
     },
     "niacin_mg": {
@@ -18966,6 +19450,10 @@
      "value": 375,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 17.27,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 13.5,
      "type": "BE"
@@ -19122,6 +19610,10 @@
      "value": 487,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 3.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.93,
      "type": "MN"
@@ -19276,6 +19768,10 @@
     },
     "phosphorus_mg": {
      "value": 642,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 6.2,
      "type": "BE"
     },
     "niacin_mg": {
@@ -19434,6 +19930,10 @@
      "value": 1233,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 9.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 4.99,
      "type": "BE"
@@ -19589,6 +20089,10 @@
     "phosphorus_mg": {
      "value": 670,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 6.3,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 2.88,
@@ -19746,6 +20250,10 @@
      "value": 645,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 7.4,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 4.13,
      "type": "BL"
@@ -19902,6 +20410,10 @@
      "value": 630,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 7.9,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 4.6,
      "type": "MN"
@@ -20056,6 +20568,10 @@
     },
     "phosphorus_mg": {
      "value": 635,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 8.45,
      "type": "BE"
     },
     "niacin_mg": {
@@ -20214,6 +20730,10 @@
      "value": 0,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 0.0,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.0,
      "type": "LZ"
@@ -20368,6 +20888,10 @@
     },
     "phosphorus_mg": {
      "value": 0,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 0.0,
      "type": "BE"
     },
     "niacin_mg": {
@@ -20526,6 +21050,10 @@
      "value": 100,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 1.18,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.8,
      "type": "BE"
@@ -20682,6 +21210,10 @@
      "value": 41,
      "type": "MN"
     },
+    "niacin_eq_mg": {
+     "value": 0.4,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.06,
      "type": "MN"
@@ -20836,6 +21368,10 @@
     },
     "phosphorus_mg": {
      "value": 140,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 2.35,
      "type": "BE"
     },
     "niacin_mg": {
@@ -20994,6 +21530,10 @@
      "value": 6,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 0.35,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.3,
      "type": "BE"
@@ -21148,6 +21688,10 @@
     },
     "phosphorus_mg": {
      "value": 90,
+     "type": "BE"
+    },
+    "niacin_eq_mg": {
+     "value": 1.2,
      "type": "BE"
     },
     "niacin_mg": {
@@ -21306,6 +21850,10 @@
      "value": 109,
      "type": "BE"
     },
+    "niacin_eq_mg": {
+     "value": 1.43,
+     "type": "BE"
+    },
     "niacin_mg": {
      "value": 0.45,
      "type": "BE"
@@ -21461,6 +22009,10 @@
     "phosphorus_mg": {
      "value": 5,
      "type": "MN"
+    },
+    "niacin_eq_mg": {
+     "value": 0.2,
+     "type": "BE"
     },
     "niacin_mg": {
      "value": 0.04,

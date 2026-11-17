@@ -18,6 +18,9 @@ export const NUTRIENTS = [
   ['vitamin_e_mg', 'Vitamin E', 'mg', 'vitamin'],
   ['vitamin_b6_mg', 'Vitamin B6', 'mg', 'vitamin'],
   ['riboflavin_mg', 'Riboflavin (B2)', 'mg', 'vitamin'],
+  ['thiamin_mg', 'Thiamin (B1)', 'mg', 'vitamin'],
+  ['niacin_eq_mg', 'Niacin (B3)', 'mg NE', 'vitamin'],
+  ['sodium_mg', 'Sodium', 'mg', 'mineral'],
   ['calcium_mg', 'Calcium', 'mg', 'mineral'],
   ['iron_mg', 'Iron', 'mg', 'mineral'],
   ['zinc_mg', 'Zinc', 'mg', 'mineral'],
@@ -121,6 +124,10 @@ export function dailyTargets(settings, nnr) {
     if (k === 'label') continue;
     t[k] = { kind: 'min', lo: v, note: nnr.kind[k] };
   }
+  // thiamin and niacin are set per MJ of energy in NNR 2023 (Table 7)
+  const mj = (kcal * 4.184) / 1000;
+  for (const [k, perMj] of Object.entries(nnr.per_mj || {})) t[k] = { kind: 'min', lo: Math.round(perMj * mj * 100) / 100, note: `RI, ${perMj} per MJ` };
+  t.sodium_mg = { kind: 'max', hi: nnr.sodium_g_max * 1000, note: 'maximum (the same limit as salt)' };
   return t;
 }
 

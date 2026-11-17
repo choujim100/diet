@@ -19,6 +19,12 @@
   },
   "salt_g_max": 5.75,
   "sodium_g_max": 2.3,
+  "per_mj": {"thiamin_mg": 0.1, "niacin_eq_mg": 1.6},
+  "per_mj_note": "Table 7: thiamin RI 0.1 mg/MJ and niacin RI 1.6 NE/MJ (niacin equivalents), so the daily value depends on the energy target (1 kcal = 0.004184 MJ).",
+  "not_tracked": {
+    "note": "Reference values exist in NNR 2023 for these, but the Swedish food database (Livsmedelsverket) has no values for them, so the app cannot add them up. They appear in the app as 'not tracked'.",
+    "items": ["vitamin_k", "pantothenic_acid", "biotin", "choline", "copper", "fluoride", "manganese", "molybdenum"]
+  },
   "kind": {
     "vitamin_a_re_ug": "RI", "vitamin_d_ug": "RI", "riboflavin_mg": "RI", "vitamin_b6_mg": "RI",
     "folate_ug": "RI", "vitamin_c_mg": "RI", "calcium_mg": "RI", "iron_mg": "RI", "zinc_mg": "RI",
