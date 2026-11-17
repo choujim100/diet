@@ -22,6 +22,7 @@ const KEYS = [
 // added sugar, mono- and polyunsaturated fat, polyols, starch, lactose: not the rows we want
 const SKIP = /tillsatt|added|zugesetzt|lisätty|lisatty|tilsat|enkelomättat|enkeltumættede|fleromättat|flerumættede|monoomättat|mono|poly|laktos|lactose|stärkelse|stivelse|tärkkelys|starch|polyol|monityydyttym|kertatyydyttym|tyydyttym/;
 
+const HEADER = /\bper\b|\b100\s*g\b|portion|annos|serving|\bpr\.|ravintoarvo|n[äa]ringsv|n[æa]ringsind|nutrition|ingredien|ainesosat|f[öo]rvaras|opbevar|best[äa]ndsdel/;
 const ENERGY = /energi|energy|energie|brennwert|energia|energ[ií]a/;
 const toNum = (s) => parseFloat(String(s).replace(',', '.'));
 // OCR often reads a 0 as O or o inside numbers, and decimal commas as dots or spaces
@@ -32,8 +33,10 @@ function clean(line) {
 /** One OCR text -> raw readings per key: { cands: {key: [{value, lt, how}]}, columns, kj }. */
 function readText(text) {
   const lines = text.split(/\r?\n/).map((l) => clean(l.toLowerCase()).trim()).filter(Boolean);
-  const cands = {};
+  const cands = {}, left = [];
   let columns = false, kj = null, kcal = null;
+  // a line with an amount that no nutrient row took: shown to the user, never silently dropped
+  const note = (line, known) => { if (/\d\s*(mg|µg|μg|ug|mcg|g|%)/.test(line) && /[a-zåäöæø]{3,}/.test(line) && !HEADER.test(line)) left.push({ text: line, known }); };
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     if (ENERGY.test(line)) {
@@ -46,9 +49,12 @@ function readText(text) {
       if ((line.match(/k[ce]a[l1i]/g) || []).length > 1) columns = true;
       continue;
     }
-    if (SKIP.test(line)) continue;
+    if (SKIP.test(line)) { note(line, true); continue; }
+    let hit = false;
     for (const [key, re] of KEYS) {
-      if (cands[key] || !re.test(line)) continue;
+      if (!re.test(line)) continue;
+      hit = true;
+      if (cands[key]) break; // this row was already read (a wrapped continuation)
       let after = line.slice(line.search(re)).replace(re, ' ');
       // a long three-language row often wraps: the amount is then alone on the next line
       if (!/\d/.test(after) && lines[i + 1] && /\d/.test(lines[i + 1]) && [(KEYS.find(([, r2]) => r2.test(lines[i + 1])) || [key])[0]].includes(key) && !ENERGY.test(lines[i + 1]) && !SKIP.test(lines[i + 1])) after = lines[i + 1];
@@ -77,8 +83,9 @@ function readText(text) {
       cands[key] = list.filter((c) => Number.isFinite(c.value) && c.value >= 0);
       break;
     }
+    if (!hit) note(line, false);
   }
-  return { cands, columns, kj, kcal };
+  return { cands, columns, kj, kcal, left };
 }
 
 /**
@@ -148,9 +155,18 @@ export function parseLabels(texts) {
     // A repaired macro can be offset by a misread of another one (55.6 and 5.5 swapped give the same energy), so when
     // any macro was repaired, the macros that only one reading supports are doubtful as well.
     const doubtful = macro.includes(key) ? !macroOk || (macroAdj && !adj(o) && o.n < 2) : adj(o) && o.n < 2;
-    values[key] = { value: o.value, lt: o.lt, adjusted: adj(o), uncertain: close || doubtful };
+    const uncertain = close || doubtful;
+    // the other readings this number could have meant, shown to the user next to an unsure value
+    const alts = uncertain ? [...new Set(rivals.map((x) => x.value))].sort((a, b) => a - b).slice(0, 3) : [];
+    values[key] = { value: o.value, lt: o.lt, adjusted: adj(o), uncertain, alts };
   }
-  return { values, columns, energy_kj: kj };
+  // lines that carried an amount but were used for no nutrient (vitamins, minerals, unreadable rows): one per row
+  const seen = new Set(), left = [];
+  for (const r of reads) for (const l of r.left) {
+    const id = l.text.replace(/[^a-zåäöæø]/g, '').slice(0, 10);
+    if (id.length >= 3 && !seen.has(id)) { seen.add(id); left.push(l); }
+  }
+  return { values, columns, energy_kj: kj, left };
 }
 export const parseLabel = (text) => parseLabels([text]);
 
@@ -159,7 +175,7 @@ export const parseLabel = (text) => parseLabels([text]);
 const TOL = { energy_kcal: [3, 0.03], salt_g: [0.05, 0.1] };
 const TOL_DEFAULT = [0.1, 0.03];
 /** Compare label values with the per-100 g values on record. Statuses: same, differs, new (not on record). */
-export function compareLabel(per100, label) {
+export function compareLabel(per100, label, { expected = [] } = {}) {
   const rows = [];
   for (const [key, l] of Object.entries(label.values)) {
     const db = per100[key];
@@ -170,8 +186,10 @@ export function compareLabel(per100, label) {
       const diff = Math.abs(db - l.value);
       status = diff <= Math.max(abs, rel * Math.max(db, l.value)) + 1e-9 || (l.lt && db <= l.value) ? 'same' : 'differs';
     }
-    rows.push({ key, db, label: l.value, lt: l.lt, adjusted: l.adjusted, uncertain: l.uncertain, status });
+    rows.push({ key, db, label: l.value, lt: l.lt, adjusted: l.adjusted, uncertain: l.uncertain, alts: l.alts || [], status });
   }
+  // rows every label has but the reader did not find: reported, never skipped
+  for (const key of expected) if (!(key in label.values)) rows.push({ key, db: per100[key], label: undefined, status: 'missing', alts: [] });
   return rows;
 }
 
@@ -237,7 +255,12 @@ export function wordsToText(lines) {
   const groups = [];
   for (const c of centres) { const g = groups[groups.length - 1]; if (g && c - g.max <= gap) { g.max = c; g.sum += c; g.n += 1; } else groups.push({ min: c, max: c, sum: c, n: 1 }); }
   const mean = groups.map((g) => g.sum / g.n);
-  if (mean.length < 2) return { text: plain.join('\n'), columns: mean.length };
+  const colOf = (w) => { const c = (w.x0 + w.x1) / 2; let k = 0; for (let j = 1; j < mean.length; j++) if (Math.abs(mean[j] - c) < Math.abs(mean[k] - c)) k = j; return k; };
+  // A real second column shows as rows that carry amounts in two different columns (or two energy readings). A single
+  // column whose numbers merely sit at uneven positions (text running into the number) must be left untouched.
+  const twoPerRow = rows.filter((r, i) => isRow(i) && new Set(r.filter((w) => NUM.test(w.text)).map(colOf)).size >= 2).length;
+  const energyTwice = lower.some((t) => isEnergy(t) && (t.match(/k[ce]a[l1i]/g) || []).length >= 2);
+  if (mean.length < 2 || (twoPerRow < 2 && !(energyTwice && twoPerRow >= 1))) return { text: plain.join('\n'), columns: mean.length < 2 ? mean.length : energyTwice ? 2 : 1 };
   // which column is "per 100 g": the one under a header word "100", otherwise the first from the left
   let want = 0;
   const firstRow = rows.findIndex((_, i) => isKey(i));
@@ -248,7 +271,6 @@ export function wordsToText(lines) {
     const k = d.indexOf(Math.min(...d));
     if (d[k] < gap * 2) want = k;
   }
-  const colOf = (w) => { const c = (w.x0 + w.x1) / 2; let k = 0; for (let j = 1; j < mean.length; j++) if (Math.abs(mean[j] - c) < Math.abs(mean[k] - c)) k = j; return k; };
   const out = rows.map((r, i) => {
     if (!isRow(i)) return plain[i];
     const firstNum = r.findIndex((w) => NUM.test(w.text));

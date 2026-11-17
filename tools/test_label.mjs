@@ -167,3 +167,21 @@ assert.equal(v('varav sockerarter 08g').sugars_g, 0.8);
 assert.equal(v('Protein 9,48').protein_g, 9.4);
 assert.equal(v('Fiber 7,28').fibre_g, 7.2);
 console.log('misread-unit tests passed');
+
+// nothing is dropped silently: unplaced lines with an amount are returned, missing rows are reported, unsure values list alternatives
+const withVit = parseLabel(`Energi 533 kcal
+Fett 32,1 g
+D-vitamiini 2,5 µg
+Kalsium 120 mg
+varav tillsatt socker 3,2 g
+per 100 g
+Salt 0,03 g`);
+const leftTexts = withVit.left.filter((l) => !l.known).map((l) => l.text);
+assert.deepEqual(leftTexts, ['d-vitamiini 2.5 µg', 'kalsium 120 mg']);
+assert.equal(withVit.left.filter((l) => l.known).length, 1);
+const exp = ['energy_kcal', 'fat_g', 'saturated_fat_g', 'carbs_g', 'sugars_g', 'fibre_g', 'protein_g', 'salt_g'];
+const miss = compareLabel({ fat_g: 32.1 }, withVit, { expected: exp }).filter((r) => r.status === 'missing').map((r) => r.key);
+assert.deepEqual(miss, ['saturated_fat_g', 'carbs_g', 'sugars_g', 'fibre_g', 'protein_g']);
+const amb = parseLabels(['Fiber 219'], 0).values.fibre_g;
+assert.ok(amb.uncertain && amb.alts.length >= 1, 'an unsure value lists the other readings');
+console.log('nothing-dropped tests passed');
