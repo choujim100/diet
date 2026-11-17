@@ -22,7 +22,7 @@ Then open http://localhost:8765. Opening `web/index.html` by double-click will n
 | Shopping list | Totals for the week by food group, with an estimated cost. Tick what you already have. |
 | Offers | Paste offers from your Lidl app or lidl.se. They are read, matched to foods (you confirm uncertain matches) and used as prices in the next plan. |
 | Food log | Log what you eat (all 2,606 foods, or meals from your plan) and compare each day and the last 7 days with your targets. |
-| Food log, scanning | "Scan a product" reads a barcode with the phone camera (Chrome on Android) or from a photo, or you type the number. The product is looked up in Open Food Facts, checked (energy against macros, saturated fat against fat, kJ against kcal, values higher than any Livsmedelsverket food, and so on) and shown for you to confirm or correct against the package. It is then logged with its own label values and saved on the device under that barcode. Only the barcode number is sent. |
+| Food log, scanning | "Scan a product" reads a barcode with the phone camera (Chrome on Android) or from a photo, or you type the number. The product is looked up in Open Food Facts, checked (energy against macros, saturated fat against fat, kJ against kcal, values higher than any Livsmedelsverket food, and so on) and shown for you to confirm or correct against the package. It is then logged with its own label values and saved on the device under that barcode. Only the barcode number is sent. "Scan nutrition label" (in the product window) photographs the package's nutrition table, reads it on the device (OCR, nothing uploaded) and shows each value next to the recorded one; for every row you choose to keep the recorded value or use the label's. Works in any browser with a camera or photo picker, including iPhone. |
 | Settings | Sex and age group, energy target, weekly budget, diet (everything, pescatarian, vegetarian, vegan), foods to avoid or prefer, your own prices, backup and restore. |
 
 The planner searches for the set of recipes that best covers the nutrient targets (weekly average), stays within budget, and avoids repeats. It cannot connect to your Lidl account: Lidl has no public API and its app terms do not allow others to access your account. See `docs/data-sources.md`.
@@ -54,6 +54,9 @@ web/                 the app (static files, no build step)
   js/matcher.js      Swedish product name -> food (port of tools/match_foods.py)
   js/offers.js       reads pasted offer text
   js/product.js      barcode look-up (Open Food Facts), unit conversion, sanity checks, camera scan
+  js/label.js        nutrition-label OCR, number repair and comparison with the recorded values
+  js/labelui.js      the "Scan nutrition label" block and compare table
+  vendor/tesseract/  bundled OCR engine and Swedish/English models (17 MB, loaded only when used; see its README.txt)
   js/store.js        saving to the browser
   data/              generated JSON + recipes.json (hand-written)
 data/                source datasets and how they are built (see data/README.md)
@@ -79,6 +82,7 @@ python tools/eval_matching.py                                   # matcher accura
 python tools/dump_py_matches.py > matches.json && node tools/check_js_matcher.mjs matches.json   # JS matcher == Python matcher
 node tools/test_planner.mjs 700 omnivore f 2000                 # planner: budget, diet, sex, kcal
 node tools/test_product.mjs                                     # barcode check digits, Open Food Facts conversion, sanity checks
+node tools/test_label.mjs                                       # label text parsing and repair (OCR itself is tested in the browser)
 ```
 
 ## Honest limits
@@ -92,6 +96,7 @@ node tools/test_product.mjs                                     # barcode check 
 - **The plan optimises the weekly average**, not every single day.
 - **Allergies:** the planner only excludes ingredients you list. It does not check for hidden allergens. Read labels.
 - **Scanned products come from Open Food Facts**, which volunteers fill in and which can contain mistakes. The app checks the numbers and makes you confirm anything suspicious, but a wrong value that looks plausible gets through, so compare with the package when it matters. Most labels list no vitamins or minerals, so those count as 0 for scanned products and the app says so. Not every Lidl product is in the database; then you type the label values once. The camera scan itself was not tested on a real phone here (the build environment has no camera); the lookup, checks and logging were.
+- **Label reading is imperfect.** OCR drops decimal commas ("14,1 g" becomes "141g") and reads "g" as "9". The parser uses the label's own arithmetic (energy must equal 4 x protein + 4 x carbohydrate + 9 x fat, saturated fat cannot exceed fat) and two reading passes to repair these, and it marks every repaired or doubtful number ("repaired", "check"). Nothing is applied until you choose it. Measured once on 16 synthetic labels (random values, six fonts, blur, noise, tilt; 128 numbers): 102 correct (25 of them flagged), 4 wrong but flagged, 22 not found (three images the reader could not read at all), none wrong without a flag. Those images were synthetic and the repair rules were tuned while looking at some of them, so real photos of curved, glossy packaging will do worse. It was not tested on a real phone photo. Only the per-100 g column is read (the first amount in each row); vitamins and minerals are not read.
 - **Single user, one browser.** No accounts and no sync. Use Export backup in Settings.
 
 ## Credits and licences

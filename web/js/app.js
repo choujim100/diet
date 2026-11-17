@@ -1,4 +1,5 @@
 import { FoodDB, NUTRIENTS, NUTRIENT_INFO, NUTRIENT_KEYS, dailyTargets, evaluate, emptyTotals, sumInto, recipeNutrition, fmt } from './nutrition.js';
+import { labelScanner } from './labelui.js';
 import { validBarcode, lookupOff, checkProduct, maxPer100, productNutrients, MACRO_KEYS, canUseCamera, canDecodePhoto, startCamera, decodePhoto } from './product.js';
 import { buildContext, generatePlan, planTotals, shoppingList, slotNutrition, MEAL_ORDER } from './planner.js';
 import { Matcher } from './matcher.js';
@@ -453,6 +454,10 @@ function productModal(prod, { note = null, bad = false } = {}) {
       h('p', { class: 'muted', style: 'margin:0' }, `Barcode ${cur.code}. ${srcText} Values per 100 g (or 100 ml; 1 ml counts as 1 g).`),
       issueBox,
       h('div', { class: 'scroll-x' }, h('table', null, h('thead', null, h('tr', null, h('th', null, 'Nutrient'), h('th', { class: 'num' }, 'Per 100 g'), h('th', null, 'Unit'), h('th', null, ''))), h('tbody', null, rows))),
+      labelScanner({ getPer100: () => cur.per100, apply: (k, v) => {
+        edited = true; cur.kj = null; cur.salt_raw = null; cur.sodium_raw = null; cur.notes = [];
+        cur.per100[k] = v; inputs[k].value = v; refresh();
+      } }),
       h('p', { class: 'muted', style: 'margin:0' }, 'Only what is on the label is listed. Vitamins and minerals the label does not show count as 0 in your totals. Change a value if it is wrong; it is saved on this device.'),
       verifyRow,
       h('label', null, 'Amount eaten (g or ml)', gram),
