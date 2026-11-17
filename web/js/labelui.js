@@ -31,10 +31,11 @@ export function labelScanner({ getPer100, apply }) {
   function show(f, texts) {
     clear(out);
     const parsed = parseLabels(texts);
+    if (texts.columns > 1) parsed.columns = true;
     const rows = compareLabel(getPer100(), parsed);
     const url = URL.createObjectURL(f);
     const picture = h('img', { src: url, alt: 'Your label photo', style: 'max-width:100%;max-height:220px;border-radius:8px;border:1px solid var(--line)', onload: () => URL.revokeObjectURL(url) });
-    const raw = h('details', null, h('summary', { class: 'muted' }, 'Text the reader saw'), texts.map((t, i) => h('pre', { style: 'white-space:pre-wrap;font-size:.8rem;max-height:200px;overflow:auto' }, `Pass ${i + 1}:
+    const raw = h('details', null, h('summary', { class: 'muted' }, 'Text the reader saw'), (texts.raw || texts).map((t, i) => h('pre', { style: 'white-space:pre-wrap;font-size:.8rem;max-height:200px;overflow:auto' }, `Pass ${i + 1}:
 ${t.trim() || '(nothing)'}`)));
     if (!rows.length) {
       out.append(picture, h('div', { class: 'banner warn' }, 'No nutrition values were found in this photo. Hold the phone straight above the table, in good light, and fill the frame with it. Or type the values.'), raw);
@@ -70,7 +71,7 @@ ${t.trim() || '(nothing)'}`)));
       h('div', { class: `banner ${differs ? 'warn' : 'good'}` }, differs
         ? `${differs} value${differs === 1 ? ' differs' : 's differ'} from the record. Compare with the package, then choose which to keep.`
         : news ? 'The values on record match the label. The label also shows values that were not on record.' : 'Everything the reader found matches the record.'),
-      parsed.columns ? h('p', { class: 'muted', style: 'margin:0' }, 'This label seems to have two columns. The first amount in each row was used as per 100 g. Check that it is not the per-portion column.') : null,
+      parsed.columns ? h('p', { class: 'muted', style: 'margin:0' }, 'This label has more than one column of numbers. Only the per 100 g column was used (the one under "100 g", otherwise the leftmost). A row whose per 100 g amount could not be read is listed under "Not found".') : null,
       h('p', { class: 'muted', style: 'margin:0' }, 'The reader can misread numbers. Check each one against your photo or the package before using it.'),
       h('div', { class: 'scroll-x' }, h('table', null, h('thead', null, h('tr', null, h('th', null, 'Nutrient'), h('th', { class: 'num' }, 'Recorded'), h('th', { class: 'num' }, 'Label'), h('th', null, ''))), h('tbody', null, body))),
       missing.length ? h('p', { class: 'muted', style: 'margin:0' }, `Not found in the photo: ${missing.join(', ')}.`) : null,
