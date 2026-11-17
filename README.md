@@ -21,7 +21,7 @@ The one rule: **only food you have confirmed counts.** The schedule is built fro
 | Tab | What |
 |---|---|
 | Schedule | Eats your pantry over the next 7 days. For every day it picks amounts (in grams) of the foods you have; there are no recipes. It shows when the food runs out, **which nutrients run out and on which day**, any limit you would exceed (salt, saturated fat), a list of suggested purchases with the reason and a "needed by" date, every day's nutrients, and the weekly average against your targets. "Mark as eaten" logs the day and takes it out of the pantry. |
-| Pantry | What you have. Scan a product's barcode (Chrome on Android) or type the number; the values are looked up in Open Food Facts, checked, and you confirm them against the package. Photograph the nutrition label to compare it with the recorded values. Foods without a barcode (fruit, vegetables) are added by name from Livsmedelsverket. |
+| Pantry | What you have. Scan a product's barcode (Chrome on Android) or type the number; the values are looked up in Open Food Facts, checked, and you confirm them against the package. Photograph the nutrition label to compare it with the recorded values. Foods without a barcode (fruit, vegetables) are added by name from Livsmedelsverket. For food that comes in pieces, enter how many pieces there are (6 avocados in a bag): the schedule then only uses whole pieces. |
 | Food log | What you ate, compared with your targets for the day and the last 7 days. |
 | Offers | Paste offers from your Lidl app or lidl.se. They only change the prices used in the shopping suggestions. |
 | Settings | Sex and age group, energy target, diet and dislikes (for the suggestions only), your own prices, backup and restore. |
@@ -41,6 +41,10 @@ EU law only requires energy, fat, saturated fat, carbohydrate, sugars, protein a
 For each day the scheduler adds small amounts of foods from the pantry, always choosing the one that most improves the day per kcal: more of a missing nutrient, less of anything over a limit, energy up to your target. A food is limited to what is left, to an even share of the stock over the days (so the iron-rich food is not eaten on day one), to at most 35% of the day's energy and 500 g. If the pantry holds fewer than 7 days of energy, full days are scheduled until it is gone and the later days are empty.
 
 "Pantry covers N days" for a nutrient is the total in the pantry divided by your daily reference value. That, not the schedule, is the "runs out" date: it is the day you could no longer reach the full value from what you have.
+
+### Food in whole pieces
+
+When you add something to the pantry you can say how many pieces it holds (or set it later in the "Whole pieces" column). The piece size is the amount divided by that number (510 g in 6 avocados = 85 g each). The schedule then uses that food only in whole pieces and never splits one. A food with fewer pieces than days is spread out (2 avocados over a week go on two different days). Left-over grams that do not make a whole piece are not counted as food. Marking a day as eaten takes whole pieces out of the pantry. Leave the field empty for anything that can be eaten in any amount (oats, milk).
 
 ### Shopping suggestions
 

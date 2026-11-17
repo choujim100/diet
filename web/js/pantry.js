@@ -51,25 +51,30 @@ export function pantryItems(pantry, products, db) {
     if (!(it.g > 0)) continue;
     const p = itemPer100(it, products, db);
     if (!p) continue;
-    out.push({ id: `${it.kind}:${it.ref}`, name: it.name, g: it.g, v: p.v, est: p.est, unknown: p.unknown, kind: it.kind, ref: it.ref });
+    out.push({ id: `${it.kind}:${it.ref}`, name: it.name, g: it.g, unit: it.unit || 0, v: p.v, est: p.est, unknown: p.unknown, kind: it.kind, ref: it.ref });
   }
   return out;
 }
 
 /** Add `g` grams of something to the pantry (or top up the entry that is already there). Returns the entry. */
-export function addToPantry(pantry, { kind, ref, name, g }) {
+export function addToPantry(pantry, { kind, ref, name, g, pieces }) {
   const key = String(ref);
   let it = pantry.find((x) => x.kind === kind && String(x.ref) === key);
   if (it) { it.g = Math.round((it.g + g) * 10) / 10; if (name) it.name = name; } else { it = { kind, ref: key, name, g: Math.round(g * 10) / 10 }; pantry.push(it); }
+  if (pieces > 0) it.unit = g / pieces; // grams in one piece; kept at full precision so that whole pieces add up
   return it;
 }
+
+/** How many whole pieces are left of a piece-wise item, or null for an item that can be used in any amount. */
+export const piecesLeft = (it) => (it.unit ? Math.floor(it.g / it.unit + 0.01) : null);
 
 /** Take `g` grams out (eaten). Removes the entry when it is used up. */
 export function takeFromPantry(pantry, kind, ref, g) {
   const i = pantry.findIndex((x) => x.kind === kind && String(x.ref) === String(ref));
   if (i < 0) return;
   pantry[i].g = Math.round((pantry[i].g - g) * 10) / 10;
-  if (pantry[i].g <= 0.5) pantry.splice(i, 1);
+  const it = pantry[i];
+  if (it.g <= 0.5 || (it.unit && it.g < 0.5 * it.unit)) pantry.splice(i, 1);
 }
 
 /**

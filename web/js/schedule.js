@@ -41,6 +41,9 @@ function penalty(x, tgs, w) {
   return p;
 }
 
+/** Grams of a pantry item that can still be used: for a food kept in whole pieces, only the whole pieces. */
+export const usableG = (g, unit) => (unit ? Math.floor(g / unit + PIECE_TOL) * unit : g);
+const PIECE_TOL = 0.01; // absorbs the 0.1 g rounding of the stock
 const round = (g) => (g >= 25 ? Math.round(g / 5) * 5 : Math.round(g));
 
 function planDay({ items, remain, cap, tgs, w, kcal }) {
@@ -52,9 +55,10 @@ function planDay({ items, remain, cap, tgs, w, kcal }) {
   for (let it = 0; it < 900 && x[E] < kcal * STOP; it++) {
     let bi = -1, bs = -Infinity, bstep = 0, bP = 0;
     for (let i = 0; i < N; i++) {
+      const u = items[i].unit || 0; // grams in one piece: such a food is only ever used in whole pieces
       const room = Math.min(cap[i], remain[i]) - amt[i];
-      if (room < 1) continue;
-      const step = Math.min(room, Math.max(2, Math.min(10, cap[i] / 4)));
+      if (room < (u ? u - 1e-6 : 1)) continue;
+      const step = u || Math.min(room, Math.max(2, Math.min(10, cap[i] / 4)));
       const v = items[i].v;
       for (let k = 0; k < NK; k++) trial[k] = x[k] + (v[K[k]] * step) / 100;
       const dE = trial[E] - x[E];
@@ -84,8 +88,10 @@ export function scheduleWeek({ items, targets, kcal, horizon = HORIZON }) {
   const w = weights();
   const N = items.length;
   const remain = Float64Array.from(items.map((i) => i.g));
+  const unit = items.map((i) => i.unit || 0);
+  const carry = new Float64Array(N); // a piece-wise food that is used less than once a day saves up its share
   const energyOf = (i, g) => (items[i].v.energy_kcal * g) / 100;
-  const stockEnergy = () => items.reduce((s, _, i) => s + energyOf(i, remain[i]), 0);
+  const stockEnergy = () => items.reduce((s, _, i) => s + energyOf(i, usableG(remain[i], unit[i])), 0);
   const foodDays = Math.min(horizon, stockEnergy() / (kcal * STOP));
   const days = [];
   for (let d = 0; d < horizon; d++) {
@@ -96,19 +102,36 @@ export function scheduleWeek({ items, targets, kcal, horizon = HORIZON }) {
     if (N && leftover >= 100) {
       const cap = new Float64Array(N);
       const share = Math.max(MAX_ENERGY_SHARE, 1.5 / N); // with only a few foods the limit would make a full day impossible
+      const fairPieces = new Float64Array(N);
       for (let i = 0; i < N; i++) {
         const kc = items[i].v.energy_kcal;
         const byEnergy = kc > 1 ? (share * kcal * 100) / kc : MAX_DAY_G;
+        if (unit[i]) {
+          const left = Math.floor(remain[i] / unit[i] + PIECE_TOL);
+          fairPieces[i] = daysLeft >= 1 ? left / daysLeft : left;
+          const allowed = daysLeft >= 1 ? Math.floor(carry[i] + fairPieces[i] * FLEX + 1e-9) : left;
+          const byCaps = Math.max(1, Math.floor(Math.min(MAX_DAY_G, byEnergy) / unit[i] + 1e-9)); // at least one piece may be eaten
+          cap[i] = Math.min(allowed, left, byCaps) * unit[i];
+          continue;
+        }
         const fair = daysLeft >= 1 ? (remain[i] / daysLeft) * FLEX : remain[i]; // the last, partial day takes what is left
         cap[i] = Math.min(MAX_DAY_G, byEnergy, fair, remain[i]);
       }
       const amt = planDay({ items, remain, cap, tgs, w, kcal: daysLeft >= 1 ? kcal : Math.min(kcal, leftover) });
       for (let i = 0; i < N; i++) {
-        let g = Math.min(round(amt[i]), remain[i]);
-        if (g < 1) continue;
-        g = Math.floor(g * 10) / 10;
+        let g, pieces = 0;
+        if (unit[i]) {
+          pieces = Math.round(amt[i] / unit[i]);
+          if (daysLeft >= 1) carry[i] = Math.max(0, carry[i] + fairPieces[i] - pieces);
+          g = Math.min(pieces * unit[i], remain[i]);
+          if (!pieces) continue;
+        } else {
+          g = Math.min(round(amt[i]), remain[i]);
+          if (g < 1) continue;
+          g = Math.floor(g * 10) / 10;
+        }
         remain[i] -= g;
-        lines.push({ id: items[i].id, name: items[i].name, g });
+        lines.push(pieces ? { id: items[i].id, name: items[i].name, g: Math.round(g * 10) / 10, pieces, unit: unit[i] } : { id: items[i].id, name: items[i].name, g });
         for (let k = 0; k < NK; k++) totals[K[k]] += (items[i].v[K[k]] * g) / 100;
       }
     }
@@ -126,7 +149,7 @@ export function scheduleWeek({ items, targets, kcal, horizon = HORIZON }) {
 export function coverage({ items, targets, kcal }) {
   const rows = [];
   const supply = Object.fromEntries(K.map((k) => [k, 0]));
-  for (const it of items) for (const k of K) supply[k] += (it.v[k] * it.g) / 100;
+  for (const it of items) { const g = usableG(it.g, it.unit); for (const k of K) supply[k] += (it.v[k] * g) / 100; }
   rows.push({ key: 'energy_kcal', supply: supply.energy_kcal, perDay: kcal, coverDays: supply.energy_kcal / kcal });
   for (const k of K) {
     const t = targets[k];

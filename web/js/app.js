@@ -1,7 +1,7 @@
 import { FoodDB, NUTRIENTS, NUTRIENT_INFO, NUTRIENT_KEYS, dailyTargets, evaluate, emptyTotals, sumInto, recipeNutrition, fmt } from './nutrition.js';
 import { labelScanner } from './labelui.js';
 import { validBarcode, lookupOff, checkProduct, maxPer100, MACRO_KEYS, canUseCamera, canDecodePhoto, startCamera, decodePhoto } from './product.js';
-import { productPer100, pantryItems, addToPantry, takeFromPantry, parsePack } from './pantry.js';
+import { productPer100, pantryItems, addToPantry, takeFromPantry, parsePack, piecesLeft } from './pantry.js';
 import { scheduleWeek, coverage, averageDays, HORIZON } from './schedule.js';
 import { suggestPurchases, allowedByDiet } from './suggest.js';
 import { Matcher } from './matcher.js';
@@ -180,7 +180,7 @@ function viewSchedule(root) {
     const pct = Math.round((d.kcal / kcal) * 100);
     return h('div', { class: 'card' },
       h('div', { class: 'row between' }, h('h3', null, fmtDate(date)), h('span', { class: d.kcal >= kcal * 0.9 ? 'muted' : 'status low' }, d.kcal ? `${Math.round(d.kcal)} kcal · ${pct} %` : 'no food left')),
-      d.lines.length ? h('table', null, h('tbody', null, d.lines.map((l) => h('tr', null, h('td', null, l.name), h('td', { class: 'num' }, `${l.g} g`))))) : h('p', { class: 'muted' }, 'Nothing in the pantry for this day.'),
+      d.lines.length ? h('table', null, h('tbody', null, d.lines.map((l) => h('tr', null, h('td', null, l.name), h('td', { class: 'num' }, l.pieces ? `${l.pieces} pc (${Math.round(l.g)} g)` : `${l.g} g`))))) : h('p', { class: 'muted' }, 'Nothing in the pantry for this day.'),
       d.lines.length ? h('details', { style: 'margin-top:.4rem' }, h('summary', { class: 'muted' }, 'Nutrients this day'), nutrientTable(evaluate(d.totals, tg), { notes })) : null,
       d.index === 0 && d.lines.length ? h('div', { class: 'row', style: 'margin-top:.5rem' }, h('button', { class: 'small', onclick: () => markEaten(d, date) }, 'Mark as eaten (log it, take it out of the pantry)')) : null);
   })));
@@ -194,7 +194,7 @@ function viewSchedule(root) {
 // ---------- pantry ----------
 function viewPantry(root) {
   root.append(h('h2', null, 'Pantry'));
-  root.append(h('p', { class: 'muted' }, 'Everything the schedule uses comes from here, and only what you have confirmed: scan a product and check its values against the package, or add a food by name. Amounts go down when you mark scheduled food as eaten; you can also change them by hand.'));
+  root.append(h('p', { class: 'muted' }, 'Everything the schedule uses comes from here, and only what you have confirmed: scan a product and check its values against the package, or add a food by name. Amounts go down when you mark scheduled food as eaten; you can also change them by hand. For food that comes in pieces (6 avocados in a bag), say how many pieces there are: the schedule then only ever uses whole pieces.'));
   root.append(scanCard('pantry'));
   root.append(foodAddCard());
   const items = S.pantry;
@@ -203,7 +203,7 @@ function viewPantry(root) {
   else {
     const sorted = [...items].sort((a, b) => a.name.localeCompare(b.name, 'sv'));
     card.append(h('div', { class: 'scroll-x' }, h('table', null,
-      h('thead', null, h('tr', null, h('th', null, 'Item'), h('th', { class: 'num' }, 'Left (g or ml)'), h('th', null, 'Where the numbers come from'), h('th', null, ''))),
+      h('thead', null, h('tr', null, h('th', null, 'Item'), h('th', { class: 'num' }, 'Left (g or ml)'), h('th', { class: 'num' }, 'Whole pieces'), h('th', null, 'Where the numbers come from'), h('th', null, ''))),
       h('tbody', null, sorted.map((it) => {
         const isProd = it.kind === 'product';
         const p = isProd ? S.products[it.ref] : null;
@@ -222,6 +222,11 @@ function viewPantry(root) {
             if (!(v > 0)) { S.pantry = S.pantry.filter((x) => x !== it); } else it.g = v;
             persist(); render();
           } })),
+          h('td', { class: 'num' }, h('input', { type: 'number', min: '1', step: '1', value: it.unit ? String(piecesLeft(it)) : '', placeholder: 'any amount', 'aria-label': `Whole pieces of ${it.name} left`, title: 'Leave empty if it can be eaten in any amount', onchange: (e) => {
+            const v = parseInt(e.target.value, 10);
+            if (v >= 1) it.unit = it.g / v; else delete it.unit;
+            persist(); render();
+          } }), it.unit ? h('div', { class: 'muted', style: 'font-size:.78rem' }, `${Math.round(it.unit)} g each`) : null),
           h('td', null, h('div', { class: 'chips' }, chips)),
           h('td', null, h('div', { class: 'row' },
             isProd && p ? h('button', { class: 'small', onclick: () => productModal(p, { mode: 'pantry', existing: true }) }, 'Details') : null,
@@ -235,22 +240,23 @@ function foodAddCard() {
   const results = h('div', { class: 'results', hidden: true });
   const pick = h('div', { class: 'row', hidden: true });
   const gram = h('input', { type: 'number', min: '1', step: '10', value: '500', 'aria-label': 'Grams' });
+  const pcs = h('input', { type: 'number', min: '1', step: '1', placeholder: 'pieces (optional)', 'aria-label': 'Whole pieces in this amount', title: 'For food in pieces, e.g. 6 avocados', style: 'width:9rem' });
   const search = h('input', { type: 'search', placeholder: 'Search foods, e.g. banan, broccoli, havregryn…', style: 'flex:1;min-width:200px', 'aria-label': 'Search foods', oninput: () => {
     clear(results);
     const res = db.search(search.value, 20);
     results.hidden = !res.length;
     for (const f of res) results.append(h('button', { onclick: () => {
       clear(pick); pick.hidden = false; results.hidden = true; search.value = '';
-      pick.append(h('b', null, label(f)), gram, 'g', h('button', { class: 'primary', onclick: () => {
+      pick.append(h('b', null, label(f)), gram, 'g', pcs, h('button', { class: 'primary', onclick: () => {
         const g = parseFloat(gram.value);
         if (!(g > 0)) { toast('Enter an amount in grams.'); return; }
-        addToPantry(S.pantry, { kind: 'food', ref: f.number, name: f.name_sv || f.name, g }); persist(); render();
+        addToPantry(S.pantry, { kind: 'food', ref: f.number, name: f.name_sv || f.name, g, pieces: parseInt(pcs.value, 10) || 0 }); persist(); render();
         toast(`${f.name_sv || f.name} added to the pantry.`);
       } }, 'I have this'));
     } }, label(f), h('span', { class: 'muted' }, ` · ${fmt(db.nutrients(f, 100).n.energy_kcal)} kcal/100 g`)));
   } });
   return h('div', { class: 'card stack', style: 'margin-top:.6rem' }, h('h3', null, 'Add a food without a barcode'),
-    h('p', { class: 'muted', style: 'margin:0' }, 'For fruit, vegetables, loose items. The values come from Livsmedelsverket (raw or as sold). Only add what you actually have.'),
+    h('p', { class: 'muted', style: 'margin:0' }, 'For fruit, vegetables, loose items. The values come from Livsmedelsverket (raw or as sold). Only add what you actually have. If it comes in pieces (6 avocados), enter how many: the schedule will not split a piece.'),
     h('div', { class: 'row' }, search), results, pick);
 }
 
@@ -393,6 +399,7 @@ function productModal(prod, { mode = 'log', note = null, bad = false, existing =
     const pack = prod.pack || parsePack(prod.quantity);
     const gram = h('input', { type: 'number', min: '1', step: '1', value: mode === 'pantry' ? (existing ? '' : String(pack || '')) : String(Math.round(cur.grams || 100)), placeholder: 'g or ml',
       'aria-label': mode === 'pantry' ? 'Amount to add to the pantry' : 'Amount eaten' });
+    const pcs = h('input', { type: 'number', min: '1', step: '1', placeholder: 'any amount', 'aria-label': 'Whole pieces in this amount' });
     const flags = {};
     const inputs = {};
     const issueBox = h('div');
@@ -460,7 +467,7 @@ function productModal(prod, { mode = 'log', note = null, bad = false, existing =
       if (!(g > 0)) { toast(mode === 'pantry' ? 'Enter how much you have (g or ml).' : 'Enter the amount you ate.'); return; }
       const saved = build(g);
       S.products[cur.code] = saved;
-      if (mode === 'pantry') addToPantry(S.pantry, { kind: 'product', ref: cur.code, name: saved.name, g });
+      if (mode === 'pantry') addToPantry(S.pantry, { kind: 'product', ref: cur.code, name: saved.name, g, pieces: parseInt(pcs.value, 10) || 0 });
       else (S.log[logDate] = S.log[logDate] || []).push({ product: cur.code, g, name: saved.name });
       persist(); close(); render();
       toast(mode === 'pantry' ? 'Added to the pantry.' : 'Added to the log.');
@@ -487,6 +494,7 @@ function productModal(prod, { mode = 'log', note = null, bad = false, existing =
         microSel, microSearch, microResults, microNote),
       verifyRow,
       h('label', null, mode === 'pantry' ? (existing ? 'Amount to add to the pantry (g or ml), leave empty to change nothing' : `Amount you have (g or ml)${pack ? `, package size ${pack}` : ''}`) : 'Amount eaten (g or ml)', gram),
+      mode === 'pantry' ? h('label', null, 'Whole pieces in this amount (optional). For example 6 for a bag of 6 avocados: the schedule will then use whole pieces only and never split one. Leave empty if it can be eaten in any amount.', pcs) : null,
       h('div', { class: 'row' }, addBtn, saveBtn,
         mode === 'log' && generic ? h('button', { onclick: () => {
           const g = parseFloat(gram.value);

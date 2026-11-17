@@ -2,8 +2,8 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { FoodDB, dailyTargets, NUTRIENT_KEYS } from '../web/js/nutrition.js';
-import { pantryItems, productPer100, parsePack, addToPantry, takeFromPantry } from '../web/js/pantry.js';
-import { scheduleWeek, coverage, averageDays } from '../web/js/schedule.js';
+import { pantryItems, productPer100, parsePack, addToPantry, takeFromPantry, piecesLeft } from '../web/js/pantry.js';
+import { scheduleWeek, coverage, averageDays, usableG } from '../web/js/schedule.js';
 import { suggestPurchases, allowedByDiet } from '../web/js/suggest.js';
 
 const rd = (f) => JSON.parse(fs.readFileSync(new URL(`../web/data/${f}.json`, import.meta.url), 'utf8'));
@@ -89,5 +89,35 @@ assert.ok(weakAfter > weakBefore + 3, `weakest six nutrients: ${weakBefore.toFix
 assert.equal(thin.length, 4, 'suggestions do not change the pantry');
 const vegan = suggestPurchases({ supply: cov.supply, targets, kcal: 2000, candidates: cands('vegan'), coverDays: cd });
 for (const s of vegan) assert.ok(allowedByDiet(s.id, s.category, 'vegan'), `${s.id} is not vegan`);
+
+// ---- foods kept in whole pieces (6 avocados in a bag): never split a piece
+const pieceList = rich.map((x) => ({ ...x }));
+const banana = pieceList.find((x) => x.name === 'banana'); banana.g = 1500; banana.unit = 1500 / 10;      // 10 bananas of 150 g
+const apple = pieceList.find((x) => x.name === 'apple'); apple.g = 2 * 180; apple.unit = 180;           // only 2 apples for the week
+const onion = pieceList.find((x) => x.name === 'onion_yellow'); onion.g = 500; onion.unit = 500 / 6;   // 6 onions: 83.333 g each
+const wp = scheduleWeek({ items: items(pieceList), targets, kcal: 2000 });
+const eaten = { banana: 0, apple: 0, onion: 0 };
+const nm = (id) => db.get(id).name_sv || db.get(id).name;
+for (const d of wp.days) for (const l of d.lines) {
+  for (const [key, it] of [['banana', banana], ['apple', apple], ['onion', onion]]) if (l.id === 'food:' + db.get(it.name).number) {
+    assert.ok(l.pieces >= 1 && Math.abs(l.g - l.pieces * it.unit) < 0.06, `${key}: ${l.g} g is not ${l.pieces} whole pieces of ${it.unit}`);
+    eaten[key] += l.pieces;
+  }
+}
+assert.ok(eaten.banana <= 10 && eaten.banana >= 5, `bananas ${eaten.banana}`);
+assert.ok(eaten.apple >= 1 && eaten.apple <= 2, `two apples are used, one piece at a time: ${eaten.apple}`);
+assert.ok(eaten.onion <= 6 && eaten.onion >= 3, `onions ${eaten.onion}`);
+assert.equal(usableG(500 - 5 * (500 / 6) + 0.04, 500 / 6) > 80, true, 'the last piece is not lost to rounding');
+assert.equal(piecesLeft({ g: 255, unit: 85 }), 3); assert.equal(piecesLeft({ g: 100 }), null);
+// leftover smaller than a piece is not usable and not counted as food
+assert.equal(usableG(100, 85), 85); assert.equal(usableG(84, 85), 0);
+const covP = coverage({ items: items([{ ...apple, g: 100 }]), targets, kcal: 2000 });   // 100 g of 180 g pieces: nothing usable
+assert.equal(covP.rows.find((r) => r.key === 'energy_kcal').coverDays, 0);
+// adding with a piece count, topping up, and eating whole pieces from the pantry
+const pl = [];
+addToPantry(pl, { kind: 'food', ref: 7, name: 'avocado', g: 510, pieces: 6 });
+assert.equal(pl[0].unit, 85); assert.equal(piecesLeft(pl[0]), 6);
+takeFromPantry(pl, 'food', 7, 85 * 5); assert.equal(piecesLeft(pl[0]), 1);
+takeFromPantry(pl, 'food', 7, 85); assert.equal(pl.length, 0, 'used up');
 console.log('thin pantry:', ws.foodDays.toFixed(1), 'food days; suggestions:', sug.map((s) => `${s.name_sv} ${s.g} g`).join(', '));
 console.log('schedule tests passed');
